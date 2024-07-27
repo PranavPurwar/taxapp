@@ -22,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:text="The new tax regime was introduced in Budget 2020 wherein the tax slabs were altered, and taxpayers were offered concessional tax rates. However, those who opt for the new regime cannot claim several exemptions and deductions, such as HRA, LTA, 80C, 80D , and more." />
+            android:text="The new tax regime was introduced in Budget 2020 wherein the tax slabs were altered, and taxpayers were offered concessional tax rates. However, those who opt for the new regime cannot claim several exemptions and deductions, such as HRA, LTA, 80C, 80D , and more."
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/button_group"
@@ -62,8 +62,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:text="Senior citizens may get certain tax benefits in the old regime." />
+            android:text="Senior citizens may get certain tax benefits in the old regime."
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/age_group"
@@ -108,8 +108,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:text="Individuals earning higher incomes are taxed higher whereas those earning less than a certain amount are exempt from it." />
+            android:text="Individuals earning higher incomes are taxed higher whereas those earning less than a certain amount are exempt from it."
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -137,45 +137,45 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Enter deductable interest income:"
-                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Enter deductable interest income:"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:text="This includes interest earned from savings account from a bank, co-operative society or a post office." />
+            android:text="This includes interest earned from savings account from a bank, co-operative society or a post office."
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ "
+                android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center">
+                android:hint="Enter deductible interest income">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="₹ "
-                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
-
-                <com.google.android.material.textfield.TextInputLayout
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/interest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter deductible interest income">
+                    android:inputType="number" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/interest"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="number" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
 
         <TextView
@@ -189,8 +189,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
-            android:text="Your net income earned from digital assets, taxed at 30%. This includes income from cryptocurrencies, NFTs, stock investments, and other digital assets." />
+            android:text="Your net income earned from digital assets, taxed at 30%. This includes income from cryptocurrencies, NFTs, stock investments, and other digital assets."
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
         <LinearLayout
             android:layout_width="match_parent"

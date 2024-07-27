@@ -7,9 +7,11 @@ object OldRegime {
             income <= 3_00_000 -> {
                 if (age == Age.SIXTY_OR_LESS) 5 else 0
             }
+
             income <= 5_00_000 -> {
                 if (age == Age.EIGHTY_OR_ABOVE) 0 else 5
             }
+
             income <= 10_00_000 -> 20
             else -> 30
         }
