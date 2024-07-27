@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Tax Calculator" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Simplify your taxes with our two powerful features:\nTax Calculator: Quickly and accurately calculate your income tax liability for the current financial year. Get instant results based on your income, deductions, and investments.\nTax Planner: Plan your taxes strategically for the year ahead. Explore various investment options and tax-saving strategies to minimize your tax burden and maximize your savings.\n\nThe Indian tax system is progressive, meaning higher income earners pay a higher percentage of tax. Various deductions and exemptions are available to help you reduce your tax liability. Our app helps you navigate these complexities and make informed decisions about your taxes.\nChoose your path and take control of your taxes today!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/tax_calculation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tax Calculation" />
+
+        <Button
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:id="@+id/tax_planning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tax Planning"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
