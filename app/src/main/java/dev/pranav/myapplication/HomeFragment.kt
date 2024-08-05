@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import dev.pranav.myapplication.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -26,7 +25,11 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.taxCalculation.setOnClickListener {
-            findNavController().navigate(R.id.action_HomeFragment_to_TaxCalculatorFragment)
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container, BasicDetailsFragment())
+                addToBackStack(null)
+                commit()
+            }
         }
     }
 
