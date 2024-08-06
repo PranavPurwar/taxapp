@@ -18,14 +18,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="Tax Calculator"
+            android:text="@string/tax_calculator"
             android:textAppearance="@style/TextAppearance.Material3.DisplaySmall" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Simplify your taxes with our two powerful features:\nTax Calculator: Quickly and accurately calculate your income tax liability for the current financial year. Get instant results based on your income, deductions, and investments.\nTax Planner: Plan your taxes strategically for the year ahead. Explore various investment options and tax-saving strategies to minimize your tax burden and maximize your savings.\n\nThe Indian tax system is progressive, meaning higher income earners pay a higher percentage of tax. Various deductions and exemptions are available to help you reduce your tax liability. Our app helps you navigate these complexities and make informed decisions about your taxes.\nChoose your path and take control of your taxes today!" />
+            android:text="@string/home_message" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +38,7 @@
                 android:id="@+id/tax_calculation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tax Calculation" />
+                android:text="@string/tax_calculation" />
 
             <Button
                 android:id="@+id/tax_planning"
@@ -45,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Tax Planning" />
+                android:text="@string/tax_planning" />
         </LinearLayout>
     </LinearLayout>
 

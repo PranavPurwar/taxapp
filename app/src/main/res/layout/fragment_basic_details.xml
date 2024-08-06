@@ -10,14 +10,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Tax Regime:"
+        android:text="@string/select_tax_regime"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
-        android:text="The new tax regime was introduced in Budget 2020 wherein the tax slabs were altered, and taxpayers were offered concessional tax rates. However, those who opt for the new regime cannot claim several exemptions and deductions, such as HRA, LTA, 80C, 80D , and more."
+        android:text="@string/new_tax_regime_info"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Old Regime" />
+            android:text="@string/old_regime" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/new_regime"
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="New Regime" />
+            android:text="@string/new_regime" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -52,14 +52,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
-        android:text="Choose your Age Group:"
+        android:text="@string/choose_your_age_group"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="Senior citizens may get certain tax benefits in the old regime."
+        android:text="@string/seniors_benefits_old_regime"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="60 or less" />
+            android:text="@string/_60_or_less" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -86,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="60 - 80 years" />
+            android:text="@string/_60_80_years" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/eighty_or_above"
@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="80 or above" />
+            android:text="@string/_80_or_above" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -102,14 +102,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginVertical="8dp"
-        android:text="Choose your employment type:"
+        android:text="@string/employment_type"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="Salaried individuals and pensioners get certain standard deduction in tax payment."
+        android:text="@string/salaried_pensioners_benefits"
         android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
@@ -127,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Salaried" />
+            android:text="@string/salaried" />
 
 
         <com.google.android.material.button.MaterialButton
@@ -136,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Pensioners" />
+            android:text="@string/pensioners" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/other"
@@ -144,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Other" />
+            android:text="@string/other" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
@@ -155,5 +155,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginTop="12dp"
-        android:text="Continue" />
+        android:text="@string/continue_text" />
 </LinearLayout>

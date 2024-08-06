@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Payable Tax"
+        android:text="@string/payable_tax"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
 
     <com.google.android.material.divider.MaterialDivider
@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Annual Income"
+            android:text="@string/annual_income"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Digital Assets Income"
+            android:text="@string/digital_assets_income"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Deductible Interest Income"
+            android:text="@string/deductible_interest_income"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -90,7 +90,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tax Rate"
+            android:text="@string/tax_rate"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -110,7 +110,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tax Amount"
+            android:text="@string/tax_amount"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -130,7 +130,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tax Rebate"
+            android:text="@string/tax_rebate"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -149,7 +149,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Standard Deduction"
+            android:text="@string/standard_deduction"
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
         <TextView
@@ -174,7 +174,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Tax Payable"
+            android:text="@string/tax_payable"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
 
         <TextView

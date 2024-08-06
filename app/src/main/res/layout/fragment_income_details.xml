@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Enter your annual income/salary:"
+        android:text="Enter your annual Income/Salary:"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:text="Individuals earning higher incomes are taxed higher whereas those earning less than a certain amount are exempt from it."
+        android:text="Individuals earning higher incomes are taxed at higher rates whereas those earning less than a certain amount are exempt from it."
         android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -27,7 +27,7 @@
         style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter annual income"
+        android:hint="Enter your salary"
         app:prefixText="₹">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -58,7 +58,7 @@
         style="?attr/textInputFilledStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter deductible interest income"
+        android:hint="Enter your deductions"
         app:prefixText="₹">
 
         <com.google.android.material.textfield.TextInputEditText

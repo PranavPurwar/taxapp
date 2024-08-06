@@ -57,4 +57,8 @@ class BasicDetailsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun toString(): String {
+        return "Basic Details"
+    }
 }

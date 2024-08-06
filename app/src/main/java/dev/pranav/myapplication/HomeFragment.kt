@@ -37,4 +37,8 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    override fun toString(): String {
+        return getString(R.string.app_name)
+    }
 }

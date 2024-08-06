@@ -106,4 +106,8 @@ class IncomeDetailsFragment : Fragment() {
             return fragment
         }
     }
+
+    override fun toString(): String {
+        return "Income Details"
+    }
 }

@@ -5,6 +5,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import dev.pranav.myapplication.databinding.ActivityMainBinding
+import dev.pranav.myapplication.util.setLocale
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,6 +14,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val prefs = getSharedPreferences("prefs", MODE_PRIVATE)
+        this.setLocale(Locale(prefs.getString("language", "en")!!))
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -21,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, HomeFragment())
             .commit()
+
+        supportFragmentManager.addFragmentOnAttachListener { fragmentManager, fragment ->
+            supportActionBar?.title = fragment.toString()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -30,7 +39,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, SettingsFragment())
+                    .addToBackStack(null)
+                    .commit()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

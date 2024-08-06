@@ -1,0 +1,36 @@
+<resources>
+    <string name="action_settings">सेटिंग्स</string>
+
+    <string name="next">अगला</string>
+    <string name="previous">पिछला</string>
+    <string name="select_tax_regime">कर व्यवस्था चुनें:</string>
+    <string name="new_tax_regime_info">नई कर व्यवस्था बजट 2020 में पेश की गई थी जिसमें कर स्लैब में बदलाव किया गया था और करदाताओं को रियायती कर दरों की पेशकश की गई थी। हालांकि, जो लोग नई व्यवस्था चुनते हैं वे HRA, LTA, 80C, 80D आदि जैसे कई छूट और कटौती का दावा नहीं कर सकते हैं।</string>
+    <string name="old_regime">पुरानी व्यवस्था</string>
+    <string name="new_regime">नई व्यवस्था</string>
+    <string name="choose_your_age_group">अपनी आयु चुनें:</string>
+    <string name="seniors_benefits_old_regime">वरिष्ठ नागरिकों को पुरानी व्यवस्था में कुछ कर लाभ मिल सकते हैं।</string>
+    <string name="_60_or_less">60 या उससे कम</string>
+    <string name="_60_80_years">60 – 80 वर्ष</string>
+    <string name="_80_or_above">80 या उससे अधिक</string>
+    <string name="employment_type">अपना रोजगार प्रकार चुनें:</string>
+    <string name="salaried_pensioners_benefits">वेतनभोगी व्यक्ति और पेंशनभोगी कर भुगतान में कुछ मानक कटौती का लाभ उठाते हैं।</string>
+    <string name="salaried">वेतनभोगी</string>
+    <string name="pensioners">पेंशनभोगी</string>
+    <string name="other">अन्य</string>
+    <string name="continue_text">जारी रखें</string>
+    <string name="tax_calculator">कर कैलकुलेटर</string>
+    <string name="home_message">हमारी दो शक्तिशाली सुविधाओं के साथ अपने करों को आसान बनाएं:\n\nकर कैलकुलेटर: वर्तमान वित्तीय वर्ष के लिए अपनी आयकर देनदारी की त्वरित और सटीक गणना करें। अपनी आय, कटौती और निवेश के आधार पर तत्काल परिणाम प्राप्त करें।\n\nकर योजनाकार: अगले वर्ष के लिए अपनी करों की रणनीतिक रूप से योजना बनाएं। अपने कर बोझ को कम करने और अपनी बचत को अधिकतम करने के लिए विभिन्न निवेश विकल्पों और कर बचत रणनीतियों का अन्वेषण करें।\n\nभारतीय कर प्रणाली प्रगतिशील है, जिसका अर्थ है कि उच्च आय वाले लोग अधिक प्रतिशत कर का भुगतान करते हैं। आपकी कर देनदारी को कम करने में मदद करने के लिए कई कटौती और छूट उपलब्ध हैं। हमारा ऐप आपको इन जटिलताओं को नेविगेट करने और अपने करों के बारे में सूचित निर्णय लेने में मदद करता है।\n\nअपना रास्ता चुनें और आज ही अपने करों का नियंत्रण लें!</string>
+    <string name="tax_calculation">कर गणना</string>
+    <string name="tax_planning">कर योजना</string>
+    <string name="languages">भाषाएँ</string>
+    <string name="faq_contact_us">अक्सर पूछे जाने वाले प्रश्न / हमसे संपर्क करें</string>
+    <string name="annual_income">वार्षिक आय</string>
+    <string name="payable_tax">देय कर</string>
+    <string name="digital_assets_income">डिजिटल संपत्ति आय</string>
+    <string name="deductible_interest_income">कटौती योग्य ब्याज आय</string>
+    <string name="tax_rate">कर दर</string>
+    <string name="tax_amount">कर राशि</string>
+    <string name="tax_rebate">कर राहत</string>
+    <string name="standard_deduction">मानक कटौती</string>
+    <string name="tax_payable">देय कर</string>
+</resources>
