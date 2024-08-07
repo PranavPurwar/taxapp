@@ -1,11 +1,16 @@
 package dev.pranav.myapplication.util
 
 interface Regime {
+    val taxSlabs: List<Int>
+
     fun calculateInterestRate(income: Double, age: Age): Int
     fun getTaxRebate(payable: Double): Double
 }
 
 object OldRegime : Regime {
+
+    override val taxSlabs = listOf(2_50_000, 3_00_000, 5_00_000, 10_00_000)
+
     override fun calculateInterestRate(income: Double, age: Age): Int {
         return when {
             income <= 2_50_000 -> 0
@@ -32,6 +37,9 @@ object OldRegime : Regime {
 }
 
 object NewRegime : Regime {
+
+    override val taxSlabs = listOf(3_00_000, 6_00_000, 9_00_000, 12_00_000, 15_00_000)
+
     override fun calculateInterestRate(income: Double, age: Age): Int {
         return when {
             income <= 3_00_000 -> 0

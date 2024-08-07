@@ -15,10 +15,20 @@ object Helper {
         digitalAssetsIncome: Double,
         age: Age
     ): Double {
-        val interestRate = regime.calculateInterestRate(income, age)
-        val taxableIncome = income - deductableInterest
+        var taxableIncome = income - deductableInterest
         val digitalAssetsTax = digitalAssetsIncome * 0.3
-        val payable = taxableIncome * (interestRate / 100.0) + digitalAssetsTax
+
+        var incomeTax = 0.0
+
+        for (slab in regime.taxSlabs) {
+            if (taxableIncome <= slab) {
+                break
+            }
+            taxableIncome -= slab
+            incomeTax += slab * (regime.calculateInterestRate(slab.toDouble(), age) / 100)
+        }
+
+        val payable = incomeTax + digitalAssetsTax
         return payable - regime.getTaxRebate(payable)
     }
 
@@ -59,5 +69,10 @@ object Helper {
                 }
             }
         })
+    }
+
+    fun EditText.getCurrencyValue(): Double {
+        val cleanString = this.text.toString().replace("\\D".toRegex(), "")
+        return if (cleanString.isBlank()) 0.0 else cleanString.toDouble() / 100
     }
 }

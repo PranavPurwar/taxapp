@@ -12,6 +12,7 @@ import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.Employment
 import dev.pranav.myapplication.util.Helper
 import dev.pranav.myapplication.util.Helper.addCurrencyFormatter
+import dev.pranav.myapplication.util.Helper.getCurrencyValue
 import dev.pranav.myapplication.util.Helper.toINRString
 import dev.pranav.myapplication.util.NewRegime
 import dev.pranav.myapplication.util.OldRegime
@@ -58,9 +59,9 @@ class IncomeDetailsFragment : Fragment() {
                     return@setOnClickListener
                 }
             }
-            val income = binding.incomeEditText.text.toString().toDouble()
-            val deductableInterest = binding.deductibleIncome.text.toString().toDouble()
-            val digitalAssetsIncome = binding.digitalAssetsIncome.text.toString().toDouble()
+            val income = binding.incomeEditText.getCurrencyValue()
+            val deductableInterest = binding.deductibleIncome.getCurrencyValue()
+            val digitalAssetsIncome = binding.digitalAssetsIncome.getCurrencyValue()
             val taxRate = regime.calculateInterestRate(income, age)
             val taxAmount = Helper.calculateTax(
                 regime,
@@ -77,11 +78,11 @@ class IncomeDetailsFragment : Fragment() {
             sheetBinding.apply {
                 annualIncome.text = "+" + income.toINRString()
                 digitalIncome.text =
-                    binding.digitalAssetsIncome.text.toString().toDouble().toINRString()
+                    binding.digitalAssetsIncome.getCurrencyValue().toINRString()
                 deductibleIncome.text =
-                    binding.deductibleIncome.text.toString().toDouble().toINRString()
+                    binding.deductibleIncome.getCurrencyValue().toINRString()
                 this.taxRate.text = taxRate.toString() + "%"
-                this.taxAmount.text = taxAmount.toString().toDouble().toINRString()
+                this.taxAmount.text = taxAmount.toINRString()
                 this.taxRebate.text = regime.getTaxRebate(taxAmount).toINRString()
                 this.payableTax.text = (taxAmount - regime.getTaxRebate(taxAmount)).toINRString()
             }
