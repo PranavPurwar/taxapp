@@ -29,7 +29,7 @@ object Helper {
         }
 
         val payable = incomeTax + digitalAssetsTax
-        return payable - regime.getTaxRebate(payable)
+        return payable
     }
 
     fun Double.toINRString(): String {
