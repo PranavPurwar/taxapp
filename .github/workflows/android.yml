@@ -2,9 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -32,10 +30,10 @@ jobs:
         uses: gradle/gradle-build-action@v3.1.0
         with:
           gradle-version: nightly
-          arguments: assembleRelease
+          arguments: assembleDebug
 
       - name: Upload debug apks
         uses: actions/upload-artifact@v4
         with:
           name: Debug APK
-          path: app/build/outputs/apk/release
+          path: app/build/outputs/apk/debug
