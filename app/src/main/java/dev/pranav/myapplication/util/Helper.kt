@@ -37,7 +37,8 @@ fun calculateHealthAndEducationalCess(payableTax: Double): Double {
                     val cleanString = s.toString().replace("\\D".toRegex(), "")
                     val parsed = if (cleanString.isBlank()) 0.0 else cleanString.toDouble()
                     val formated = NumberFormat.getCurrencyInstance(Locale("en", "IN"))
-                        .format(parsed / 100).substring(1)
+                        .apply { maximumFractionDigits = 0 }
+                        .format(parsed).substring(1)
 
                     current = formated
                     this@addCurrencyFormatter.setText(formated)
@@ -51,5 +52,5 @@ fun calculateHealthAndEducationalCess(payableTax: Double): Double {
 
     fun EditText.getCurrencyValue(): Double {
         val cleanString = this.text.toString().replace("\\D".toRegex(), "")
-        return if (cleanString.isBlank()) 0.0 else cleanString.toDouble() / 100
+        return if (cleanString.isBlank()) 0.0 else cleanString.toDouble()
     }

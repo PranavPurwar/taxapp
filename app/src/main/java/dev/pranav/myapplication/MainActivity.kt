@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
             supportActionBar?.title = fragment.toString()
         }
 
+        supportFragmentManager.addOnBackStackChangedListener {
+            supportActionBar?.title =
+                supportFragmentManager.findFragmentById(R.id.fragment_container).toString()
+        }
+
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (supportFragmentManager.backStackEntryCount > 0) {

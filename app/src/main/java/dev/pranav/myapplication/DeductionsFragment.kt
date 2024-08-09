@@ -1,6 +1,7 @@
 package dev.pranav.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import dev.pranav.myapplication.util.NewRegime
 import dev.pranav.myapplication.util.OldRegime
 import dev.pranav.myapplication.util.Regime
 import dev.pranav.myapplication.util.addCurrencyFormatter
+import dev.pranav.myapplication.util.getCurrencyValue
+import kotlin.math.min
 
 class DeductionsFragment : Fragment() {
 
@@ -35,7 +38,7 @@ class DeductionsFragment : Fragment() {
             "NewRegime" -> NewRegime
             else -> OldRegime
         }
-        val taxableIncome = arguments?.getDouble("taxableIncome")
+        val taxableIncome = arguments?.getDouble("taxableIncome")!!
         val digitalAssetsIncome = arguments?.getDouble("digitalAssetsIncome")
 
         binding.apply {
@@ -52,6 +55,38 @@ class DeductionsFragment : Fragment() {
             educationLoan.addCurrencyFormatter()
             charityDonation.addCurrencyFormatter()
             npsContribution.addCurrencyFormatter()
+
+            calculateButton.setOnClickListener {
+                val deductions80C = min(investment.getCurrencyValue(), 1_50_000.0)
+                val deductions80D = min(
+                    medicalInsurance.getCurrencyValue(),
+                    if (age == Age.SIXTY_OR_LESS) 25_000.0 else 50_000.0
+                )
+                val deductions80E = educationLoan.getCurrencyValue()
+                val deductions80G = charityDonation.getCurrencyValue()
+                val npsContribution = min(npsContribution.getCurrencyValue(), 50_000.0)
+
+                val taxableAmount =
+                    taxableIncome - deductions80C - deductions80D - deductions80E - deductions80G - npsContribution
+
+                val map = mutableMapOf<String, Double>()
+                map.apply {
+                    put("Annual Income", taxableIncome)
+                    put("Digital Assets Income", digitalAssetsIncome ?: 0.0)
+                    put("Investments and Expenses (80C)", deductions80C)
+                    put("Medical Insurance (80D)", deductions80D)
+                    put("Education Loan (80E)", deductions80E)
+                    put("Charity Donation (80G)", deductions80G)
+                    put("National Pension Scheme Contribution (NPS)", npsContribution)
+                    put("Taxable Amount", taxableAmount)
+                }
+                Log.d("DeductionsFragment", map.toString())
+
+
+                TaxSheetFragment(
+                    map, regime.calculateTax(taxableAmount, age)
+                ).show(parentFragmentManager, "TaxSheetFragment")
+            }
         }
     }
 
@@ -82,6 +117,6 @@ class DeductionsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Income Details"
+        return "Deductions"
     }
 }

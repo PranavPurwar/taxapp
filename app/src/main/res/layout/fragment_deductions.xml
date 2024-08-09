@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?backgroundColor"
+    android:background="?colorSurface"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -161,8 +161,7 @@
                     android:id="@+id/charity_donation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:text="0" />
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -201,8 +200,7 @@
                     android:id="@+id/nps_contribution"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:text="0" />
+                    android:inputType="number" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

@@ -1,54 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:layout_marginBottom="?attr/actionBarSize"
-    android:background="?backgroundColor"
+    android:background="?colorSurface"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="?attr/actionBarSize"
     tools:context=".HomeFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/tax_calculator"
+        android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+        android:textColor="?colorOnSurface" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/home_message"
+        android:textColor="?colorOnSurfaceVariant" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <TextView
+        <Button
+            android:id="@+id/tax_calculation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:gravity="center"
-            android:text="@string/tax_calculator"
-            android:textAppearance="@style/TextAppearance.Material3.DisplaySmall" />
+            android:text="@string/tax_calculation" />
 
-        <TextView
+        <Button
+            android:id="@+id/tax_planning"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="@string/home_message" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/tax_calculation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tax_calculation" />
-
-            <Button
-                android:id="@+id/tax_planning"
-                style="@style/Widget.Material3.Button.TonalButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/tax_planning" />
-        </LinearLayout>
+            android:layout_marginStart="16dp"
+            android:text="@string/tax_planning" />
     </LinearLayout>
-
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>
