@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 import dev.pranav.myapplication.databinding.FragmentIncomeDetailsBinding
 import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.Employment
 import dev.pranav.myapplication.util.NewRegime
 import dev.pranav.myapplication.util.OldRegime
-import dev.pranav.myapplication.util.Regime
+import dev.pranav.myapplication.util.TaxRegime
 import dev.pranav.myapplication.util.addCurrencyFormatter
+import dev.pranav.myapplication.util.calculateHealthAndEducationalCess
 import dev.pranav.myapplication.util.getCurrencyValue
 import kotlin.math.min
 
@@ -42,32 +44,57 @@ class IncomeDetailsFragment : Fragment() {
         binding.digitalAssetsIncome.addCurrencyFormatter()
 
         binding.continueButton.setOnClickListener {
-                if (binding.incomeEditText.text.toString().isEmpty()) {
-                    binding.incomeInput.error = "Please enter your income"
-                    return@setOnClickListener
-                }
+            if (binding.incomeEditText.text.toString().isEmpty()) {
+                binding.incomeInput.error = "Please enter your income"
+                return@setOnClickListener
+            }
 
             val income = binding.incomeEditText.getCurrencyValue()
             val deductableInterest = binding.deductibleIncome.getCurrencyValue()
             val digitalAssetsIncome = binding.digitalAssetsIncome.getCurrencyValue()
 
             val taxableIncome = income - min(
-                deductableInterest,
-                if (age == Age.SIXTY_OR_LESS) 10_000.0 else 50_000.0
+                deductableInterest, if (age == Age.EIGHTY_OR_ABOVE) 50_000.0 else 10_000.0
             )
 
-            parentFragmentManager.beginTransaction().apply {
-                replace(
-                    R.id.fragment_container,
-                    DeductionsFragment.newInstance(
-                        age,
-                        employment,
-                        regime,
-                        taxableIncome,
-                        digitalAssetsIncome
+            if (regime == OldRegime) {
+                parentFragmentManager.beginTransaction().apply {
+                    replace(
+                        R.id.fragment_container, DeductionsFragment.newInstance(
+                            age, employment, regime, taxableIncome, digitalAssetsIncome
+                        )
                     )
-                )
-                commit()
+                    commit()
+                }
+            } else {
+                val standardDeduction = regime.getStandardDeductions(taxableIncome)
+
+                val taxableAmount = taxableIncome - standardDeduction
+
+                var tax = regime.calculateTax(taxableAmount, age)
+                Snackbar.make(
+                    binding.root, "Calculate Tax: $tax", Snackbar.LENGTH_LONG
+                ).show()
+                val cess = calculateHealthAndEducationalCess(tax)
+                val rebate = regime.getTaxRebate(tax, taxableIncome)
+                val digitalAssetsTax = digitalAssetsIncome * 0.03
+
+                tax += cess + digitalAssetsTax - rebate
+
+                val map = mutableMapOf<String, Double>()
+                map.apply {
+                    put("Annual Income", taxableIncome)
+                    put("Digital Assets Income", digitalAssetsIncome)
+                    put("Standard Deductions", standardDeduction)
+                    put("Taxable Amount", taxableAmount)
+                    put("Digital Assets Tax", digitalAssetsTax)
+                    put("Health and Education Cess", cess)
+                    put("Tax Rebate", -rebate)
+                }
+
+                TaxSheetFragment(
+                    map, tax
+                ).show(parentFragmentManager, "TaxSheetFragment")
             }
 
             return@setOnClickListener
@@ -81,7 +108,9 @@ class IncomeDetailsFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(age: Age, employment: Employment, regime: Regime): IncomeDetailsFragment {
+        fun newInstance(
+            age: Age, employment: Employment, regime: TaxRegime
+        ): IncomeDetailsFragment {
             val args = Bundle()
             args.putSerializable("age", age)
             args.putSerializable("employment", employment)

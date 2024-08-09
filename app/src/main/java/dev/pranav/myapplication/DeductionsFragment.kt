@@ -1,7 +1,6 @@
 package dev.pranav.myapplication
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +10,9 @@ import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.Employment
 import dev.pranav.myapplication.util.NewRegime
 import dev.pranav.myapplication.util.OldRegime
-import dev.pranav.myapplication.util.Regime
+import dev.pranav.myapplication.util.TaxRegime
 import dev.pranav.myapplication.util.addCurrencyFormatter
+import dev.pranav.myapplication.util.calculateHealthAndEducationalCess
 import dev.pranav.myapplication.util.getCurrencyValue
 import kotlin.math.min
 
@@ -31,15 +31,15 @@ class DeductionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val age = arguments?.getSerializable("age") as Age
-        val employment = arguments?.getSerializable("employment") as Employment
-        val regime = when (arguments?.getSerializable("regime")) {
+        val age = arguments?.getSerializable("age")!! as Age
+        val employment = arguments?.getSerializable("employment")!! as Employment
+        val regime = when (arguments?.getSerializable("regime")!!) {
             "OldRegime" -> OldRegime
             "NewRegime" -> NewRegime
             else -> OldRegime
         }
         val taxableIncome = arguments?.getDouble("taxableIncome")!!
-        val digitalAssetsIncome = arguments?.getDouble("digitalAssetsIncome")
+        val digitalAssetsIncome = arguments?.getDouble("digitalAssetsIncome")!!
 
         binding.apply {
             if (regime == NewRegime) {
@@ -66,25 +66,36 @@ class DeductionsFragment : Fragment() {
                 val deductions80G = charityDonation.getCurrencyValue()
                 val npsContribution = min(npsContribution.getCurrencyValue(), 50_000.0)
 
+                val standardDeduction = regime.getStandardDeductions(taxableIncome)
+
                 val taxableAmount =
-                    taxableIncome - deductions80C - deductions80D - deductions80E - deductions80G - npsContribution
+                    taxableIncome - deductions80C - deductions80D - deductions80E - deductions80G - npsContribution - standardDeduction
+
+                var tax = regime.calculateTax(taxableAmount, age)
+                val cess = calculateHealthAndEducationalCess(tax)
+                val rebate = regime.getTaxRebate(tax, taxableIncome)
+                val digitalAssetsTax = digitalAssetsIncome * 0.03
+
+                tax += cess + digitalAssetsTax - rebate
 
                 val map = mutableMapOf<String, Double>()
                 map.apply {
                     put("Annual Income", taxableIncome)
-                    put("Digital Assets Income", digitalAssetsIncome ?: 0.0)
-                    put("Investments and Expenses (80C)", deductions80C)
-                    put("Medical Insurance (80D)", deductions80D)
-                    put("Education Loan (80E)", deductions80E)
-                    put("Charity Donation (80G)", deductions80G)
-                    put("National Pension Scheme Contribution (NPS)", npsContribution)
+                    put("Digital Assets Income", digitalAssetsIncome)
+                    put("Investments and Expenses (80C)", -deductions80C)
+                    put("Medical Insurance (80D)", -deductions80D)
+                    put("Education Loan (80E)", -deductions80E)
+                    put("Charity Donation (80G)", -deductions80G)
+                    put("National Pension Scheme Contribution (NPS)", -npsContribution)
+                    put("Standard Deductions", -standardDeduction)
                     put("Taxable Amount", taxableAmount)
+                    put("Digital Assets Tax", digitalAssetsTax)
+                    put("Health and Education Cess", cess)
+                    put("Tax Rebate", -rebate)
                 }
-                Log.d("DeductionsFragment", map.toString())
-
 
                 TaxSheetFragment(
-                    map, regime.calculateTax(taxableAmount, age)
+                    map, tax
                 ).show(parentFragmentManager, "TaxSheetFragment")
             }
         }
@@ -99,7 +110,7 @@ class DeductionsFragment : Fragment() {
         fun newInstance(
             age: Age,
             employment: Employment,
-            regime: Regime,
+            regime: TaxRegime,
             taxableIncome: Double,
             digitalAssetsIncome: Double
         ): DeductionsFragment {
