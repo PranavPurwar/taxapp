@@ -5,18 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import dev.pranav.myapplication.databinding.FragmentIncomeDetailsBinding
-import dev.pranav.myapplication.databinding.PayableTaxBottomSheetBinding
 import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.Employment
-import dev.pranav.myapplication.util.Helper
-import dev.pranav.myapplication.util.Helper.addCurrencyFormatter
-import dev.pranav.myapplication.util.Helper.getCurrencyValue
-import dev.pranav.myapplication.util.Helper.toINRString
 import dev.pranav.myapplication.util.NewRegime
 import dev.pranav.myapplication.util.OldRegime
 import dev.pranav.myapplication.util.Regime
+import dev.pranav.myapplication.util.addCurrencyFormatter
+import dev.pranav.myapplication.util.getCurrencyValue
+import kotlin.math.min
 
 class IncomeDetailsFragment : Fragment() {
 
@@ -44,51 +41,38 @@ class IncomeDetailsFragment : Fragment() {
         binding.deductibleIncome.addCurrencyFormatter()
         binding.digitalAssetsIncome.addCurrencyFormatter()
 
-        binding.calculateButton.setOnClickListener {
-            binding.apply {
+        binding.continueButton.setOnClickListener {
                 if (binding.incomeEditText.text.toString().isEmpty()) {
                     binding.incomeInput.error = "Please enter your income"
                     return@setOnClickListener
                 }
-                if (binding.deductibleIncome.text.toString().isEmpty()) {
-                    binding.deductibleInput.error = "Please enter your income"
-                    return@setOnClickListener
-                }
-                if (binding.digitalAssetsIncome.text.toString().isEmpty()) {
-                    binding.digitalInput.error = "Please enter your income"
-                    return@setOnClickListener
-                }
-            }
+
             val income = binding.incomeEditText.getCurrencyValue()
             val deductableInterest = binding.deductibleIncome.getCurrencyValue()
             val digitalAssetsIncome = binding.digitalAssetsIncome.getCurrencyValue()
-            val taxRate = regime.calculateInterestRate(income, age)
-            val taxAmount = Helper.calculateTax(
-                regime,
-                employment,
-                income,
+
+            val taxableIncome = income - min(
                 deductableInterest,
-                digitalAssetsIncome,
-                age
+                if (age == Age.SIXTY_OR_LESS) 10_000.0 else 50_000.0
             )
 
-            val sheet = BottomSheetDialog(requireContext())
-            val sheetBinding = PayableTaxBottomSheetBinding.inflate(layoutInflater)
-
-            sheetBinding.apply {
-                annualIncome.text = "+" + income.toINRString()
-                digitalIncome.text =
-                    binding.digitalAssetsIncome.getCurrencyValue().toINRString()
-                deductibleIncome.text =
-                    binding.deductibleIncome.getCurrencyValue().toINRString()
-                this.taxRate.text = taxRate.toString() + "%"
-                this.taxAmount.text = taxAmount.toINRString()
-                this.taxRebate.text = regime.getTaxRebate(taxAmount).toINRString()
-                this.payableTax.text = (taxAmount - regime.getTaxRebate(taxAmount)).toINRString()
+            parentFragmentManager.beginTransaction().apply {
+                replace(
+                    R.id.fragment_container,
+                    DeductionsFragment.newInstance(
+                        age,
+                        employment,
+                        regime,
+                        taxableIncome,
+                        digitalAssetsIncome
+                    )
+                )
+                commit()
             }
-            sheet.setContentView(sheetBinding.root)
-            sheet.show()
+
+            return@setOnClickListener
         }
+
     }
 
     override fun onDestroyView() {

@@ -6,30 +6,8 @@ import android.widget.EditText
 import java.text.NumberFormat
 import java.util.Locale
 
-object Helper {
-    fun calculateTax(
-        regime: Regime,
-        employment: Employment,
-        income: Double,
-        deductableInterest: Double,
-        digitalAssetsIncome: Double,
-        age: Age
-    ): Double {
-        var taxableIncome = income - deductableInterest
-        val digitalAssetsTax = digitalAssetsIncome * 0.3
-
-        var incomeTax = 0.0
-
-        for (slab in regime.taxSlabs) {
-            if (taxableIncome <= slab) {
-                break
-            }
-            taxableIncome -= slab
-            incomeTax += slab * (regime.calculateInterestRate(slab.toDouble(), age) / 100)
-        }
-
-        val payable = incomeTax + digitalAssetsTax
-        return payable
+fun calculateHealthAndEducationalCess(payableTax: Double): Double {
+    return payableTax * 0.04
     }
 
     fun Double.toINRString(): String {
@@ -58,7 +36,7 @@ object Helper {
 
                     val cleanString = s.toString().replace("\\D".toRegex(), "")
                     val parsed = if (cleanString.isBlank()) 0.0 else cleanString.toDouble()
-                    val formated = NumberFormat.getCurrencyInstance()
+                    val formated = NumberFormat.getCurrencyInstance(Locale("en", "IN"))
                         .format(parsed / 100).substring(1)
 
                     current = formated
@@ -75,4 +53,3 @@ object Helper {
         val cleanString = this.text.toString().replace("\\D".toRegex(), "")
         return if (cleanString.isBlank()) 0.0 else cleanString.toDouble() / 100
     }
-}

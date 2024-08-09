@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?backgroundColor"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/c_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Investments and Expenses (80C):"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="Investments made in Equity Linked Saving Schemes, PPF/SPF/RPF, payments made towards Life Insurance Premiums, principal sum of a home loan, SSY, NSC, SCSS, etc."
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/investment_input"
+                style="?attr/textInputFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter investment amount"
+                app:prefixText="₹">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/investment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/d_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Medical Insurance (80D):"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="Medical premium &amp; preventive health checkup fees paid for self &amp; family including parents"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/medical_insurance_input"
+                style="?attr/textInputFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter medical insurance amount"
+                app:prefixText="₹">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/medical_insurance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/e_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Education Loan (80E):"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="80E education loan deduction is a tax incentive given to people who avail education loan for higher studies. This deduction is available only on the interest amount paid on the loan and not on the principal amount."
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/education_loan_input"
+                style="?attr/textInputFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter interest amount"
+                app:prefixText="₹">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/education_loan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/g_section"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Charity Donation (80G):"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="ection 80G of the Indian Income Tax Act allows a tax deduction for contributions to certain relief funds and charitable institutions."
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/charity_donation_input"
+                style="?attr/textInputFilledStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter charity donation amount"
+                app:prefixText="₹">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/charity_donation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="0" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calculate_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Calculate" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

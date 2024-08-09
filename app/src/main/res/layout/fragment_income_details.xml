@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="?backgroundColor"
     android:padding="16dp">
 
     <TextView
@@ -49,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:text="This includes interest earned from savings account from a bank, co-operative society or a post office."
+        android:text="Section 80TTA of the Income Tax Act, 1961 provides a deduction of up to Rs 10,000 on the income earned from interest on savings made in a bank, co-operative society or post office. There is no deduction for interest earned from fixed deposits an recurring deposits."
         android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -68,10 +69,17 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/nps_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:text="Are you contributing to NPS (National Pension Scheme)" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Income from Digital Assets:"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
@@ -101,11 +109,12 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/calculate_button"
+        android:id="@+id/continue_button"
+        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Calculate" />
+        android:text="Continue" />
 
 
 </LinearLayout>
