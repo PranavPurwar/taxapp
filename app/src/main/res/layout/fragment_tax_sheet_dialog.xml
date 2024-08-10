@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
-        android:text="Total Tax"
+        android:text="@string/total_tax"
         android:textAppearance="@style/TextAppearance.Material3.DisplaySmall" />
 
     <com.google.android.material.divider.MaterialDivider
@@ -44,7 +44,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Payable Tax"
+            android:text="@string/payable_tax"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium" />
 
         <TextView
@@ -54,4 +54,12 @@
             android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
             tools:text="₹29,500" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/regime_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+        android:visibility="gone"
+        tools:text="New Regime can save you ₹1,400 on tax" />
 </LinearLayout>

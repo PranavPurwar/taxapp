@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/list_item_spacing_half"
+    android:gravity="center_vertical"
+    app:cardBackgroundColor="?colorSurfaceContainer"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="0dp"
+    app:contentPadding="@dimen/list_item_spacing">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/public_sans_semibold"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="?colorOnSurfaceVariant"
+            tools:text="Income Tax Saving in New and Old Regime" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/public_sans"
+            android:maxLines="4"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            tools:text="Tax planning is one of the ways that will help you save on taxes and increase your income. The Income Tax Act provides deductions for various investments, savings and expenditures incurred by the taxpayer in a particular financial year.
+
+" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

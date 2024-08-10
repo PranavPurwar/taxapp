@@ -71,7 +71,8 @@ class DeductionsFragment : Fragment() {
                 val taxableAmount =
                     taxableIncome - deductions80C - deductions80D - deductions80E - deductions80G - npsContribution - standardDeduction
 
-                var tax = regime.calculateTax(taxableAmount, age)
+                val initialTax = regime.calculateTax(taxableAmount, age)
+                var tax = initialTax
                 val cess = calculateHealthAndEducationalCess(tax)
                 val rebate = regime.getTaxRebate(tax, taxableIncome)
                 val digitalAssetsTax = digitalAssetsIncome * 0.03
@@ -95,7 +96,9 @@ class DeductionsFragment : Fragment() {
                 }
 
                 TaxSheetFragment(
-                    map, tax
+                    map, tax,
+                    OldRegime.calculateTax(taxableAmount, age)
+                        .let { if (it < initialTax) "Old regime can save you up to ₹${initialTax - it}" else "" }
                 ).show(parentFragmentManager, "TaxSheetFragment")
             }
         }

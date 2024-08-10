@@ -71,7 +71,8 @@ class IncomeDetailsFragment : Fragment() {
 
                 val taxableAmount = taxableIncome - standardDeduction
 
-                var tax = regime.calculateTax(taxableAmount, age)
+                val initialTax = regime.calculateTax(taxableAmount, age)
+                var tax = initialTax
                 Snackbar.make(
                     binding.root, "Calculate Tax: $tax", Snackbar.LENGTH_LONG
                 ).show()
@@ -93,7 +94,9 @@ class IncomeDetailsFragment : Fragment() {
                 }
 
                 TaxSheetFragment(
-                    map, tax
+                    map, tax,
+                    NewRegime.calculateTax(taxableAmount, age)
+                        .let { if (it < initialTax) "New Regime can save you up to ₹${it - initialTax}" else "" }
                 ).show(parentFragmentManager, "TaxSheetFragment")
             }
 

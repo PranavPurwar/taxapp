@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?colorSurface"
+    android:background="?colorSurfaceContainerLow"
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
@@ -16,6 +16,7 @@
         android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="@string/tax_calculator"
+        android:fontFamily="@font/public_sans_semibold"
         android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
         android:textColor="?colorOnSurface" />
 
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:text="@string/home_message"
+        android:fontFamily="@font/public_sans"
         android:textColor="?colorOnSurfaceVariant" />
 
 
@@ -37,6 +39,7 @@
             android:id="@+id/tax_calculation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/public_sans_semibold"
             android:text="@string/tax_calculation" />
 
         <Button
@@ -45,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/public_sans_semibold"
             android:text="@string/tax_planning" />
     </LinearLayout>
 </LinearLayout>

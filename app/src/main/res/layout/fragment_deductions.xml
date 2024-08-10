@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?colorSurface"
+    android:background="?colorSurfaceContainerLow"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -23,6 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Investments and Expenses (80C):"
+                android:fontFamily="@font/public_sans_semibold"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <TextView
@@ -30,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/public_sans"
                 android:text="Investments made in Equity Linked Saving Schemes, PPF/SPF/RPF, payments made towards Life Insurance Premiums, principal sum of a home loan, SSY, NSC, SCSS, etc."
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
@@ -61,6 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Medical Insurance (80D):"
+                android:fontFamily="@font/public_sans_semibold"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <TextView
@@ -68,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/public_sans"
                 android:text="Medical premium &amp; preventive health checkup fees paid for self &amp; family including parents"
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
@@ -93,6 +97,7 @@
             android:id="@+id/e_section"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/public_sans_semibold"
             android:orientation="vertical">
 
             <TextView
@@ -107,6 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/public_sans"
                 android:text="80E education loan deduction is a tax incentive given to people who avail education loan for higher studies. This deduction is available only on the interest amount paid on the loan and not on the principal amount."
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
@@ -132,6 +138,7 @@
             android:id="@+id/g_section"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/public_sans_semibold"
             android:orientation="vertical">
 
             <TextView
@@ -146,6 +153,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/public_sans"
                 android:text="Section 80G of the Indian Income Tax Act allows a tax deduction for contributions to certain relief funds and charitable institutions."
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
@@ -178,6 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Employee's contribution to NPS (80CCD):"
+                android:fontFamily="@font/public_sans_semibold"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <TextView
@@ -185,6 +194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
+                android:fontFamily="@font/public_sans"
                 android:text="Includes voluntary contribution to National Pension Scheme (NPS) under section 80CCD(1) and 80CCD(1B)"
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
 
@@ -211,6 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/public_sans_semibold"
             android:text="Calculate" />
 
     </LinearLayout>

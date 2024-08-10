@@ -31,6 +31,13 @@ class HomeFragment : Fragment() {
                 commit()
             }
         }
+        binding.taxPlanning.setOnClickListener {
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.fragment_container, PlanningFragment())
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 
     override fun onDestroyView() {

@@ -14,7 +14,8 @@ import dev.pranav.myapplication.util.toINRString
 
 class TaxSheetFragment(
     private val mItems: Map<String, Double>,
-    private val payableTax: Double
+    private val payableTax: Double,
+    private val message: String = ""
 ) : BottomSheetDialogFragment() {
 
     private var _binding: FragmentTaxSheetDialogBinding? = null
@@ -40,6 +41,10 @@ class TaxSheetFragment(
             }
         binding.payableTax.text = payableTax.toINRString()
 
+        if (message.isNotEmpty()) {
+            binding.regimeMessage.visibility = View.VISIBLE
+            binding.regimeMessage.text = message
+        }
     }
 
     private inner class ViewHolder(binding: FragmentTaxSheetListDialogItemBinding) :

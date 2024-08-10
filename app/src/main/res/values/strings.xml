@@ -34,5 +34,6 @@
     <string name="tax_rebate">Tax Rebate</string>
     <string name="standard_deduction">Standard Deduction</string>
     <string name="tax_payable">Tax Payable</string>
+    <string name="total_tax">Total Tax</string>
 
 </resources>
