@@ -4,7 +4,6 @@
     android:id="@+id/text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/selectableItemBackground"
     android:gravity="center_vertical"
     android:paddingHorizontal="@dimen/list_item_spacing"
     android:paddingVertical="@dimen/list_item_spacing_half">

@@ -86,6 +86,6 @@ class TaxSheetFragment(
     }
 
     override fun toString(): String {
-        return "Tax Sheet"
+        return "Tax Details"
     }
 }

@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/select_tax_regime"
         android:fontFamily="@font/public_sans_semibold"
+        android:textColor="?colorOnSurface"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
@@ -21,7 +22,8 @@
         android:layout_marginVertical="12dp"
         android:text="@string/new_tax_regime_info"
         android:fontFamily="@font/public_sans"
-        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?colorOnSurfaceVariant" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/button_group"
@@ -31,7 +33,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:selectionRequired="true"
         app:singleSelection="true">
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/old_regime"
@@ -57,6 +58,7 @@
         android:layout_marginVertical="12dp"
         android:text="@string/choose_your_age_group"
         android:fontFamily="@font/public_sans_semibold"
+        android:textColor="?colorOnSurface"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
@@ -65,7 +67,8 @@
         android:layout_marginBottom="12dp"
         android:text="@string/seniors_benefits_old_regime"
         android:fontFamily="@font/public_sans"
-        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?colorOnSurfaceVariant" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/age_group"
@@ -109,6 +112,7 @@
         android:layout_marginVertical="12dp"
         android:text="@string/employment_type"
         android:fontFamily="@font/public_sans_semibold"
+        android:textColor="?colorOnSurface"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
     <TextView
@@ -117,7 +121,8 @@
         android:layout_marginBottom="12dp"
         android:text="@string/salaried_pensioners_benefits"
         android:fontFamily="@font/public_sans"
-        android:textAppearance="@style/TextAppearance.Material3.BodySmall" />
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="?colorOnSurfaceVariant" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/employment_group"
