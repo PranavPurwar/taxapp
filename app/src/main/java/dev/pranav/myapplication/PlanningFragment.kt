@@ -84,6 +84,11 @@ val data = listOf(
         "Income Tax Saving ways for beginners",
         "Tax planning is one of the ways that will help you save on taxes and increase your income. The Income Tax Act provides deductions for various investments, savings and expenditures incurred by the taxpayer in a particular financial year.",
         "https://cleartax.in/s/income-tax-savings"
+    ),
+    Article(
+        "E-Filing FAQ",
+        "Official income tax site with commonly asked questions and answers. Provides additional details related to income tax.",
+        "https://www.incometax.gov.in/iec/foportal/help/e-filing-itr1-form-sahaj-faq"
     )
 )
 

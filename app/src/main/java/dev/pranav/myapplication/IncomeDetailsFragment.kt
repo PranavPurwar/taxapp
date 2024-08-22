@@ -15,7 +15,6 @@ import dev.pranav.myapplication.util.TaxRegime
 import dev.pranav.myapplication.util.addCurrencyFormatter
 import dev.pranav.myapplication.util.calculateHealthAndEducationalCess
 import dev.pranav.myapplication.util.getCurrencyValue
-import kotlin.math.min
 
 class IncomeDetailsFragment : Fragment() {
 
@@ -53,9 +52,7 @@ class IncomeDetailsFragment : Fragment() {
             val deductableInterest = binding.deductibleIncome.getCurrencyValue()
             val digitalAssetsIncome = binding.digitalAssetsIncome.getCurrencyValue()
 
-            val taxableIncome = income - min(
-                deductableInterest, if (age == Age.EIGHTY_OR_ABOVE) 50_000.0 else 10_000.0
-            )
+            val taxableIncome = income - deductableInterest
 
             if (regime == OldRegime) {
                 parentFragmentManager.beginTransaction().apply {

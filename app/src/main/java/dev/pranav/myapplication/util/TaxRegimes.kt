@@ -116,7 +116,6 @@ data object NewRegime : TaxRegime {
     override fun getStandardDeductions(income: Double): Double {
         return minOf(income, 75_000.0)
     }
-
 }
 
 enum class Age {

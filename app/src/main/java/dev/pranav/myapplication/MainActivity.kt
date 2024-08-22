@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import dev.pranav.myapplication.databinding.ActivityMainBinding
 import dev.pranav.myapplication.util.setLocale
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
+        enableEdgeToEdge()
 
         supportFragmentManager.beginTransaction().add(R.id.fragment_container, HomeFragment())
             .commit()
