@@ -3,26 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="?colorSurfaceContainerLow"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/select_tax_regime"
-        android:fontFamily="@font/public_sans_semibold"
-        android:textColor="?colorOnSurface"
         android:layout_marginTop="16dp"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+        android:fontFamily="@font/public_sans_semibold"
+        android:text="@string/select_tax_regime"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="?colorOnSurface" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/new_tax_regime_info"
         android:fontFamily="@font/public_sans"
+        android:text="@string/new_tax_regime_info"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="?colorOnSurfaceVariant" />
 
@@ -53,22 +58,27 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="@string/choose_your_age_group"
         android:fontFamily="@font/public_sans_semibold"
-        android:textColor="?colorOnSurface"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+        android:text="@string/choose_your_age_group"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="?colorOnSurface" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/seniors_benefits_old_regime"
         android:fontFamily="@font/public_sans"
+        android:text="@string/seniors_benefits_old_regime"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="?colorOnSurfaceVariant" />
 
@@ -108,22 +118,27 @@
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="@string/employment_type"
         android:fontFamily="@font/public_sans_semibold"
-        android:textColor="?colorOnSurface"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+        android:text="@string/employment_type"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textColor="?colorOnSurface" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/salaried_pensioners_benefits"
         android:fontFamily="@font/public_sans"
+        android:text="@string/salaried_pensioners_benefits"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="?colorOnSurfaceVariant" />
 
@@ -162,6 +177,11 @@
             android:text="@string/other" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"

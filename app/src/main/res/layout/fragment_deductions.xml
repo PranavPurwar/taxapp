@@ -22,9 +22,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Investments and Expenses (80C):"
                 android:fontFamily="@font/public_sans_semibold"
+                android:text="Investments and Expenses (80C):"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,6 +58,11 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/d_section"
             android:layout_width="wrap_content"
@@ -63,9 +73,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Medical Insurance (80D):"
                 android:fontFamily="@font/public_sans_semibold"
+                android:text="Medical Insurance (80D):"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,6 +110,11 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/e_section"
             android:layout_width="wrap_content"
@@ -108,6 +128,11 @@
                 android:layout_marginTop="16dp"
                 android:text="Education Loan (80E):"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -137,6 +162,11 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/g_section"
             android:layout_width="wrap_content"
@@ -150,6 +180,11 @@
                 android:layout_marginTop="16dp"
                 android:text="Charity Donation (80G):"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -179,6 +214,11 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/nps_employer"
             android:layout_width="wrap_content"
@@ -189,9 +229,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Employee's contribution to NPS (80CCD):"
                 android:fontFamily="@font/public_sans_semibold"
+                android:text="Employee's contribution to NPS (80CCD):"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -221,6 +266,11 @@
 
         </LinearLayout>
 
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/calculate_button"
             android:layout_width="match_parent"
@@ -228,6 +278,11 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/public_sans_semibold"
             android:text="Calculate" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
     </LinearLayout>
 

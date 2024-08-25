@@ -25,6 +25,11 @@
                 android:text="Investments and Expenses (80C):"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,6 +54,11 @@
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:id="@+id/d_section"
@@ -89,6 +99,12 @@
 
         </LinearLayout>
 
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:id="@+id/e_section"
             android:layout_width="wrap_content"
@@ -127,6 +143,12 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:id="@+id/g_section"
@@ -167,6 +189,11 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/calculate_button"
