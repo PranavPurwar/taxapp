@@ -6,8 +6,9 @@
     android:background="?colorSurfaceContainerLow"
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
-    android:paddingTop="32dp"
-    android:paddingBottom="?attr/actionBarSize"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
     tools:context=".HomeFragment">
 
     <TextView
@@ -18,7 +19,8 @@
         android:gravity="center"
         android:text="@string/app_name"
         android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
-        android:textColor="?colorOnSurface" />
+        android:textColor="?colorOnSurface"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,4 +58,9 @@
             android:fontFamily="@font/public_sans_semibold"
             android:text="@string/tax_planning" />
     </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="?colorSurfaceContainerLow"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,6 +73,12 @@
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="?colorOnSurface" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,6 +88,7 @@
         android:text="@string/seniors_benefits_old_regime"
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="?colorOnSurfaceVariant" />
+
 
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/age_group"
@@ -131,6 +139,12 @@
         android:text="@string/employment_type"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="?colorOnSurface" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -189,7 +203,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="16dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="@string/continue_text" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>
