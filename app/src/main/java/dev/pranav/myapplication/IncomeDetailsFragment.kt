@@ -15,6 +15,7 @@ import dev.pranav.myapplication.util.TaxRegime
 import dev.pranav.myapplication.util.addCurrencyFormatter
 import dev.pranav.myapplication.util.calculateHealthAndEducationalCess
 import dev.pranav.myapplication.util.getCurrencyValue
+import dev.pranav.myapplication.util.toINRString
 
 class IncomeDetailsFragment : Fragment() {
 
@@ -79,22 +80,38 @@ class IncomeDetailsFragment : Fragment() {
 
                 tax += cess + digitalAssetsTax - rebate
 
-                val map = mutableMapOf<String, Double>()
-                map.apply {
-                    put("Annual Income", taxableIncome)
-                    put("Digital Assets Income", digitalAssetsIncome)
-                    put("Standard Deductions", standardDeduction)
-                    put("Taxable Amount", taxableAmount)
-                    put("Digital Assets Tax", digitalAssetsTax)
-                    put("Health and Education Cess", cess)
-                    put("Tax Rebate", -rebate)
-                }
+                val incomeSources = mutableMapOf(
+                    "Annual Income" to income,
+                    "Digital Assets Income" to digitalAssetsIncome,
+                )
 
-                TaxSheetFragment(
-                    map, tax,
-                    NewRegime.calculateTax(taxableAmount, age)
-                        .let { if (it < initialTax) "New Regime can save you up to ₹${it - initialTax}" else "" }
-                ).show(parentFragmentManager, "TaxSheetFragment")
+                val deductions = mutableMapOf(
+                    "Standard Deductions" to standardDeduction,
+                )
+
+                val taxed = mutableMapOf(
+                    "Taxable Amount" to taxableAmount,
+                    "Digital Assets Tax" to digitalAssetsTax,
+                    "Health and Education Cess" to cess,
+                    "Tax Rebate" to rebate,
+                )
+
+                parentFragmentManager.beginTransaction().apply {
+                    replace(
+                        R.id.fragment_container, TaxFragment(
+                            incomeSources, deductions, taxed, tax,
+                            if (OldRegime.calculateTax(
+                                    taxableAmount,
+                                    age
+                                ) < tax
+                            ) "Old Regime can save you ${
+                                (tax - OldRegime.calculateTax(
+                                    taxableAmount, age
+                                )).toINRString()
+                            }" else ""
+                        )
+                    )
+                }.commit()
             }
 
             return@setOnClickListener

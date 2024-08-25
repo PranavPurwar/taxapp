@@ -14,6 +14,7 @@ import dev.pranav.myapplication.util.TaxRegime
 import dev.pranav.myapplication.util.addCurrencyFormatter
 import dev.pranav.myapplication.util.calculateHealthAndEducationalCess
 import dev.pranav.myapplication.util.getCurrencyValue
+import dev.pranav.myapplication.util.toINRString
 import kotlin.math.min
 
 class DeductionsFragment : Fragment() {
@@ -79,27 +80,43 @@ class DeductionsFragment : Fragment() {
 
                 tax += cess + digitalAssetsTax - rebate
 
-                val map = mutableMapOf<String, Double>()
-                map.apply {
-                    put("Annual Income", taxableIncome)
-                    put("Digital Assets Income", digitalAssetsIncome)
-                    put("Investments and Expenses (80C)", -deductions80C)
-                    put("Medical Insurance (80D)", -deductions80D)
-                    put("Education Loan (80E)", -deductions80E)
-                    put("Charity Donation (80G)", -deductions80G)
-                    put("National Pension Scheme Contribution (NPS)", -npsContribution)
-                    put("Standard Deductions", -standardDeduction)
-                    put("Taxable Amount", taxableAmount)
-                    put("Digital Assets Tax", digitalAssetsTax)
-                    put("Health and Education Cess", cess)
-                    put("Tax Rebate", -rebate)
-                }
+                val incomeSources = mutableMapOf(
+                    "Annual Income" to taxableIncome,
+                    "Digital Assets Income" to digitalAssetsIncome,
+                )
 
-                TaxSheetFragment(
-                    map, tax,
-                    OldRegime.calculateTax(taxableAmount, age)
-                        .let { if (it < initialTax) "Old regime can save you up to ₹${initialTax - it}" else "" }
-                ).show(parentFragmentManager, "TaxSheetFragment")
+                val deductions = mutableMapOf(
+                    "Investments and Expenses (80C)" to -deductions80C,
+                    "Medical Insurance (80D)" to -deductions80D,
+                    "Education Loan (80E)" to -deductions80E,
+                    "Charity Donation (80G)" to -deductions80G,
+                    "National Pension Scheme Contribution (NPS)" to -npsContribution,
+                    "Standard Deductions" to -standardDeduction
+                )
+
+                val taxed = mutableMapOf(
+                    "Taxable Amount" to taxableAmount,
+                    "Digital Assets Tax" to digitalAssetsTax,
+                    "Health and Education Cess" to cess,
+                    "Tax Rebate" to rebate
+                )
+
+                parentFragmentManager.beginTransaction().apply {
+                    replace(
+                        R.id.fragment_container, TaxFragment(
+                            incomeSources, deductions, taxed, tax,
+                            if (NewRegime.calculateTax(
+                                    taxableAmount,
+                                    age
+                                ) < tax
+                            ) "New Regime can save you ${
+                                (tax - NewRegime.calculateTax(
+                                    taxableAmount, age
+                                )).toINRString()
+                            }" else ""
+                        )
+                    )
+                }.commit()
             }
         }
     }

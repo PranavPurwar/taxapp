@@ -6,6 +6,7 @@ import android.view.MenuItem
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import dev.pranav.myapplication.databinding.ActivityMainBinding
 import dev.pranav.myapplication.util.setLocale
 import java.util.Locale
@@ -27,16 +28,33 @@ class MainActivity : AppCompatActivity() {
 
         enableEdgeToEdge()
 
+        binding.toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+
         supportFragmentManager.beginTransaction().add(R.id.fragment_container, HomeFragment())
             .commit()
 
         supportFragmentManager.addFragmentOnAttachListener { _, fragment ->
+            if (fragment is HomeFragment) {
+                binding.toolbar.navigationIcon = null
+            } else {
+                binding.toolbar.navigationIcon =
+                    ContextCompat.getDrawable(this, R.drawable.round_arrow_back_ios_new_24)
+            }
             supportActionBar?.title = fragment.toString()
         }
 
         supportFragmentManager.addOnBackStackChangedListener {
+            val fragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
+            if (fragment is HomeFragment) {
+                binding.toolbar.navigationIcon = null
+            } else {
+                binding.toolbar.navigationIcon =
+                    ContextCompat.getDrawable(this, R.drawable.round_arrow_back_ios_new_24)
+            }
             supportActionBar?.title =
-                supportFragmentManager.findFragmentById(R.id.fragment_container).toString()
+                fragment.toString()
         }
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {

@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="?listPreferredItemHeight"
         android:fontFamily="@font/public_sans_semibold"
+        android:foreground="?selectableItemBackground"
         android:gravity="center_vertical"
         android:text="@string/languages"
-        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         app:drawableEndCompat="@drawable/baseline_arrow_forward_24" />
 
     <TextView
@@ -22,9 +23,10 @@
         android:layout_width="match_parent"
         android:layout_height="?listPreferredItemHeight"
         android:fontFamily="@font/public_sans_semibold"
+        android:foreground="?selectableItemBackground"
         android:gravity="center_vertical"
         android:text="@string/faq_contact_us"
-        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         app:drawableEndCompat="@drawable/baseline_arrow_forward_24" />
 
     <TextView

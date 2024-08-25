@@ -35,5 +35,9 @@
     <string name="standard_deduction">Standard Deduction</string>
     <string name="tax_payable">Tax Payable</string>
     <string name="total_tax">Total Tax</string>
+    <string name="final_amount">Final amount</string>
+    <string name="tax">Tax</string>
+    <string name="deductions">Deductions</string>
+    <string name="income_sources">Income Sources</string>
 
 </resources>

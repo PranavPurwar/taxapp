@@ -21,7 +21,6 @@ class BasicDetailsFragment : Fragment() {
     ): View {
         _binding = FragmentBasicDetailsBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,6 +58,6 @@ class BasicDetailsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Basic Details"
+        return "Personal Details"
     }
 }
