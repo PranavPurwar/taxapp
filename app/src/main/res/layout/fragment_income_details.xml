@@ -10,25 +10,25 @@
     android:paddingRight="16dp"
     tools:ignore="ScrollViewCount">
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="Enter your annual Income/Salary:"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
-
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/public_sans"
         android:text="Individuals earning higher incomes are taxed at higher rates whereas those earning less than a certain amount are exempt from it."
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
@@ -60,31 +60,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="Enter deductable interest income:"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
-
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/public_sans"
         android:text="Section 80TTA of the Income Tax Act, 1961 provides a deduction of up to Rs 10,000 on the income earned from interest on savings made in a bank, co-operative society or post office. There is no deduction for interest earned from fixed deposits an recurring deposits."
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="?colorOnSurfaceVariant" />
-
-
-    <Space
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/deductible_input"
@@ -112,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="Income from Digital Assets:"
         android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
@@ -120,7 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/public_sans"
         android:text="Your net income earned from digital assets, taxed at 30%. This includes income from cryptocurrencies, NFTs, stock investments, and other digital assets."
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
@@ -146,7 +136,7 @@
     <Space
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"

@@ -5,22 +5,24 @@
     android:layout_height="match_parent"
     android:background="?colorSurfaceContainerLow"
     android:orientation="vertical"
+    android:gravity="center_vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="@string/select_tax_regime"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="?colorOnSurface" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,16 +70,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="@string/choose_your_age_group"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="?colorOnSurface" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -135,16 +132,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/public_sans_semibold"
         android:text="@string/employment_type"
         android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:textColor="?colorOnSurface" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -195,7 +187,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"
@@ -207,7 +199,7 @@
         android:text="@string/continue_text" />
 
     <Space
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1" />
 </LinearLayout>
