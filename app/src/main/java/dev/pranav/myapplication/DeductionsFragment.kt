@@ -109,18 +109,17 @@ class DeductionsFragment : Fragment() {
                     "Tax Rebate" to rebate
                 )
 
+                val newTax = NewRegime.calculateTax(taxableAmount, age)
+                val additonalTaxesNew = NewRegime.getAdditionalTaxes(taxableIncome, age)
+                val totalNewTax = newTax + additonalTaxesNew
+
                 parentFragmentManager.beginTransaction().apply {
                     replace(
                         R.id.fragment_container, TaxFragment(
                             incomeSources, deductions, taxed, tax,
-                            if (NewRegime.calculateTax(
-                                    taxableAmount,
-                                    age
-                                ) < tax
+                            if (totalNewTax < tax
                             ) "New Regime can save you ${
-                                (tax - NewRegime.calculateTax(
-                                    taxableAmount, age
-                                )).toINRString()
+                                (tax - totalNewTax).toINRString()
                             }" else ""
                         )
                     )

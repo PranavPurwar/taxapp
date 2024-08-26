@@ -105,18 +105,17 @@ class IncomeDetailsFragment : Fragment() {
                     "Tax Rebate" to rebate,
                 )
 
+                val oldTax = OldRegime.calculateTax(taxableAmount, age)
+                val additonalTaxesOld = OldRegime.getAdditionalTaxes(taxableIncome, age)
+                val totalOldTax = oldTax + additonalTaxesOld
+
                 parentFragmentManager.beginTransaction().apply {
                     replace(
                         R.id.fragment_container, TaxFragment(
                             incomeSources, deductions, taxed, tax,
-                            if (OldRegime.calculateTax(
-                                    taxableAmount,
-                                    age
-                                ) < tax
+                            if (totalOldTax < tax
                             ) "Old Regime can save you ${
-                                (tax - OldRegime.calculateTax(
-                                    taxableAmount, age
-                                )).toINRString()
+                                (tax - totalOldTax).toINRString()
                             }" else ""
                         )
                     )

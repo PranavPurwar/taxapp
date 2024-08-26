@@ -30,10 +30,10 @@ jobs:
         uses: gradle/gradle-build-action@v3.1.0
         with:
           gradle-version: nightly
-          arguments: assembleDebug
+          arguments: assembleRelease
 
       - name: Upload debug apks
         uses: actions/upload-artifact@v4
         with:
-          name: Debug APK
-          path: app/build/outputs/apk/debug
+          name: Release APK
+          path: app/build/outputs/apk/release

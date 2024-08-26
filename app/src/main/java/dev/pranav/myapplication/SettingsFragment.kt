@@ -54,7 +54,7 @@ class SettingsFragment : Fragment() {
         }
         binding.faq.setOnClickListener {
             val intent = Intent().setAction(Intent.ACTION_VIEW)
-                .setData(Uri.parse("https://landingpage.com/contactus"))
+                .setData(Uri.parse("mailto:purwarpranav80@gmail.com"))
 
             startActivity(intent)
         }
