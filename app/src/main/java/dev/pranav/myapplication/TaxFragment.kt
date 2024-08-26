@@ -108,6 +108,6 @@ class TaxFragment(
     }
 
     override fun toString(): String {
-        return "Tax Details"
+        return getString(R.string.tax_calculation)
     }
 }

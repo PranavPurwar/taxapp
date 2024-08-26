@@ -62,6 +62,6 @@ class BasicDetailsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Personal Details"
+        return "Basic Details"
     }
 }

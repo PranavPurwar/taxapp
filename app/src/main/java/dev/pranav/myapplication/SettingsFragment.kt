@@ -66,6 +66,6 @@ class SettingsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Settings"
+        return getString(R.string.action_settings)
     }
 }

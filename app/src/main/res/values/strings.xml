@@ -39,5 +39,32 @@
     <string name="tax">Tax</string>
     <string name="deductions">Deductions</string>
     <string name="income_sources">Income Sources</string>
+    <string name="investments_and_expenses_80c">Investments and Expenses (80C):</string>
+    <string name="investments_made_in_equity_linked_saving_schemes_ppf_spf_rpf_payments_made_towards_life_insurance_premiums_principal_sum_of_a_home_loan_ssy_nsc_scss_etc">Investments made in Equity Linked Saving Schemes, PPF/SPF/RPF, payments made towards Life Insurance Premiums, principal sum of a home loan, SSY, NSC, SCSS, etc.</string>
+    <string name="enter_investment_amount">Enter investment amount</string>
+    <string name="medical_insurance_80d">Medical Insurance (80D):</string>
+    <string name="medical_premium_amp_preventive_health_checkup_fees_paid_for_self_amp_family_including_parents"><![CDATA[Medical premium & preventive health checkup fees paid for self & family including parents]]></string>
+    <string name="enter_medical_insurance_amount">Enter medical insurance amount</string>
+    <string name="education_loan_80e">Education Loan (80E):</string>
+    <string name="_80e_education_loan_deduction_is_a_tax_incentive_given_to_people_who_avail_education_loan_for_higher_studies_this_deduction_is_available_only_on_the_interest_amount_paid_on_the_loan_and_not_on_the_principal_amount">80E education loan deduction is a tax incentive given to people who avail education loan for higher studies. This deduction is available only on the interest amount paid on the loan and not on the principal amount.</string>
+    <string name="enter_interest_amount">Enter interest amount</string>
+    <string name="charity_donation_80g">Charity Donation (80G):</string>
+    <string name="section_80g_of_the_indian_income_tax_act_allows_a_tax_deduction_for_contributions_to_certain_relief_funds_and_charitable_institutions">Section 80G of the Indian Income Tax Act allows a tax deduction for contributions to certain relief funds and charitable institutions.</string>
+    <string name="enter_charity_donation_amount">Enter charity donation amount</string>
+    <string name="employee_s_contribution_to_nps_80ccd">Employee\'s contribution to NPS (80CCD):</string>
+    <string name="includes_voluntary_contribution_to_national_pension_scheme_nps_under_section_80ccd_1_and_80ccd_1b">Includes voluntary contribution to National Pension Scheme (NPS) under section 80CCD(1) and 80CCD(1B)</string>
+    <string name="enter_contribution_amount">Enter contribution amount</string>
+    <string name="calculate">Calculate</string>
+    <string name="enter_your_annual_income_salary">Enter your annual Income/Salary:</string>
+    <string name="individuals_earning_higher_incomes_are_taxed_at_higher_rates_whereas_those_earning_less_than_a_certain_amount_are_exempt_from_it">Individuals earning higher incomes are taxed at higher rates whereas those earning less than a certain amount are exempt from it.</string>
+    <string name="enter_your_salary">Enter your salary</string>
+    <string name="enter_deductable_interest_income">Enter deductable interest income:</string>
+    <string name="section_80tta_of_the_income_tax_act_1961_provides_a_deduction_of_up_to_rs_10_000_on_the_income_earned_from_interest_on_savings_made_in_a_bank_co_operative_society_or_post_office_there_is_no_deduction_for_interest_earned_from_fixed_deposits_an_recurring_deposits">Section 80TTA of the Income Tax Act, 1961 provides a deduction of up to Rs 10,000 on the income earned from interest on savings made in a bank, co-operative society or post office. There is no deduction for interest earned from fixed deposits an recurring deposits.</string>
+    <string name="enter_your_deductions">Enter your deductions</string>
+    <string name="income_from_digital_assets">Income from Digital Assets:</string>
+    <string name="your_net_income_earned_from_digital_assets_taxed_at_30_this_includes_income_from_cryptocurrencies_nfts_stock_investments_and_other_digital_assets">Your net income earned from digital assets, taxed at 30%. This includes income from cryptocurrencies, NFTs, stock investments, and other digital assets.</string>
+    <string name="enter_digital_assets_income">Enter digital assets income</string>
+    <string name="common_continue">Continue</string>
+    <string name="version_1_0_0">Version 1.0.0</string>
 
 </resources>

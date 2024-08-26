@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/public_sans_semibold"
-                android:text="Investments and Expenses (80C):"
+                android:text="@string/investments_and_expenses_80c"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <Space
@@ -38,7 +38,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/public_sans"
-                android:text="Investments made in Equity Linked Saving Schemes, PPF/SPF/RPF, payments made towards Life Insurance Premiums, principal sum of a home loan, SSY, NSC, SCSS, etc."
+                android:text="@string/investments_made_in_equity_linked_saving_schemes_ppf_spf_rpf_payments_made_towards_life_insurance_premiums_principal_sum_of_a_home_loan_ssy_nsc_scss_etc"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 android:textColor="?colorOnSurfaceVariant" />
 
@@ -47,7 +47,7 @@
                 style="?attr/textInputFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter investment amount"
+                android:hint="@string/enter_investment_amount"
                 app:prefixText="₹">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/public_sans_semibold"
-                android:text="Medical Insurance (80D):"
+                android:text="@string/medical_insurance_80d"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <Space
@@ -89,7 +89,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/public_sans"
-                android:text="Medical premium &amp; preventive health checkup fees paid for self &amp; family including parents"
+                android:text="@string/medical_premium_amp_preventive_health_checkup_fees_paid_for_self_amp_family_including_parents"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 android:textColor="?colorOnSurfaceVariant" />
 
@@ -98,7 +98,7 @@
                 style="?attr/textInputFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter medical insurance amount"
+                android:hint="@string/enter_medical_insurance_amount"
                 app:prefixText="₹">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Education Loan (80E):"
+                android:text="@string/education_loan_80e"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <Space
@@ -141,7 +141,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/public_sans"
-                android:text="80E education loan deduction is a tax incentive given to people who avail education loan for higher studies. This deduction is available only on the interest amount paid on the loan and not on the principal amount."
+                android:text="@string/_80e_education_loan_deduction_is_a_tax_incentive_given_to_people_who_avail_education_loan_for_higher_studies_this_deduction_is_available_only_on_the_interest_amount_paid_on_the_loan_and_not_on_the_principal_amount"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 android:textColor="?colorOnSurfaceVariant" />
 
@@ -150,7 +150,7 @@
                 style="?attr/textInputFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter interest amount"
+                android:hint="@string/enter_interest_amount"
                 app:prefixText="₹">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -179,7 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Charity Donation (80G):"
+                android:text="@string/charity_donation_80g"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <Space
@@ -193,7 +193,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/public_sans"
-                android:text="Section 80G of the Indian Income Tax Act allows a tax deduction for contributions to certain relief funds and charitable institutions."
+                android:text="@string/section_80g_of_the_indian_income_tax_act_allows_a_tax_deduction_for_contributions_to_certain_relief_funds_and_charitable_institutions"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 android:textColor="?colorOnSurfaceVariant" />
 
@@ -202,7 +202,7 @@
                 style="?attr/textInputFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter charity donation amount"
+                android:hint="@string/enter_charity_donation_amount"
                 app:prefixText="₹">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -231,7 +231,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/public_sans_semibold"
-                android:text="Employee's contribution to NPS (80CCD):"
+                android:text="@string/employee_s_contribution_to_nps_80ccd"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
 
             <Space
@@ -245,7 +245,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/public_sans"
-                android:text="Includes voluntary contribution to National Pension Scheme (NPS) under section 80CCD(1) and 80CCD(1B)"
+                android:text="@string/includes_voluntary_contribution_to_national_pension_scheme_nps_under_section_80ccd_1_and_80ccd_1b"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 android:textColor="?colorOnSurfaceVariant" />
 
@@ -254,7 +254,7 @@
                 style="?attr/textInputFilledStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter contribution amount"
+                android:hint="@string/enter_contribution_amount"
                 app:prefixText="₹">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -278,7 +278,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/public_sans_semibold"
-            android:text="Calculate" />
+            android:text="@string/calculate" />
 
         <Space
             android:layout_width="0dp"
