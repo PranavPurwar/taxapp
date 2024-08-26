@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.TaxArticleListItemBinding
 import dev.pranav.myapplication.databinding.TaxPlanningBinding
 
@@ -29,6 +30,10 @@ class PlanningFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         binding.list.layoutManager = LinearLayoutManager(requireContext())
         binding.list.adapter = ArticleAdapter(data)
         binding.list.adapter?.notifyDataSetChanged()
@@ -89,6 +94,16 @@ val data = listOf(
         "E-Filing FAQ",
         "Official income tax site with commonly asked questions and answers. Provides additional details related to income tax.",
         "https://www.incometax.gov.in/iec/foportal/help/e-filing-itr1-form-sahaj-faq"
+    ),
+    Article(
+        "How to file Income Tax Returns?",
+        "Official income tax site providing details on filing Income Tax Returns.",
+        "https://incometaxindia.gov.in/Pages/tax-services/file-income-tax-return.aspx"
+    ),
+    Article(
+        "Returns and Forms Applicable for Salaried Individuals for AY 2024-25",
+        "Official list of Returns and Forms available for Salaried Individuals for AY 2024-25",
+        "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1"
     )
 )
 

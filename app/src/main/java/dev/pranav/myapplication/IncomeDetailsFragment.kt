@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.FragmentIncomeDetailsBinding
 import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.Employment
@@ -32,6 +33,11 @@ class IncomeDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ true)
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ false)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ false)
+
         val age = arguments?.getSerializable("age") as Age
         val employment = arguments?.getSerializable("employment") as Employment
         val regime = when (arguments?.getSerializable("regime")) {
@@ -62,6 +68,7 @@ class IncomeDetailsFragment : Fragment() {
                             age, employment, regime, taxableIncome, digitalAssetsIncome
                         )
                     )
+                    addToBackStack(null)
                     commit()
                 }
             } else {
@@ -77,8 +84,9 @@ class IncomeDetailsFragment : Fragment() {
                 val cess = calculateHealthAndEducationalCess(tax)
                 val rebate = regime.getTaxRebate(tax, taxableIncome)
                 val digitalAssetsTax = digitalAssetsIncome * 0.03
+                val additonalTaxes = regime.getAdditionalTaxes(taxableIncome, age)
 
-                tax += cess + digitalAssetsTax - rebate
+                tax += cess + digitalAssetsTax + additonalTaxes - rebate
 
                 val incomeSources = mutableMapOf(
                     "Annual Income" to income,
@@ -93,6 +101,7 @@ class IncomeDetailsFragment : Fragment() {
                     "Taxable Amount" to taxableAmount,
                     "Digital Assets Tax" to digitalAssetsTax,
                     "Health and Education Cess" to cess,
+                    "Additional Taxes" to additonalTaxes,
                     "Tax Rebate" to rebate,
                 )
 

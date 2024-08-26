@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.ActivityTaxBinding
 import dev.pranav.myapplication.databinding.FragmentTaxSheetListDialogItemBinding
 import dev.pranav.myapplication.util.toINRString
@@ -36,6 +37,11 @@ class TaxFragment(
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         binding.income.layoutManager =
             LinearLayoutManager(context)
         binding.income.adapter =

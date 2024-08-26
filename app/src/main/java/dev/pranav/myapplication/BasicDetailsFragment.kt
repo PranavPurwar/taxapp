@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.FragmentBasicDetailsBinding
 import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.NewRegime
@@ -25,6 +26,10 @@ class BasicDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ true)
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ false)
 
         binding.continueButton.setOnClickListener {
             val age = when (binding.ageGroup.checkedButtonId) {
@@ -47,8 +52,7 @@ class BasicDetailsFragment : Fragment() {
                     IncomeDetailsFragment.newInstance(age, employment, regime)
                 )
                 addToBackStack(null)
-                commit()
-            }
+            }.commit()
         }
     }
 

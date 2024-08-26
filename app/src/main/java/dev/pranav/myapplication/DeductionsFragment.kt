@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.FragmentDeductionsBinding
 import dev.pranav.myapplication.util.Age
 import dev.pranav.myapplication.util.Employment
@@ -32,6 +33,11 @@ class DeductionsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.Z, /* forward= */ false)
+
         val age = arguments?.getSerializable("age")!! as Age
         val employment = arguments?.getSerializable("employment")!! as Employment
         val regime = when (arguments?.getSerializable("regime")!!) {
@@ -77,8 +83,9 @@ class DeductionsFragment : Fragment() {
                 val cess = calculateHealthAndEducationalCess(tax)
                 val rebate = regime.getTaxRebate(tax, taxableIncome)
                 val digitalAssetsTax = digitalAssetsIncome * 0.03
+                val additonalTaxes = regime.getAdditionalTaxes(taxableIncome, age)
 
-                tax += cess + digitalAssetsTax - rebate
+                tax += cess + digitalAssetsTax + additonalTaxes - rebate
 
                 val incomeSources = mutableMapOf(
                     "Annual Income" to taxableIncome,
@@ -96,6 +103,7 @@ class DeductionsFragment : Fragment() {
 
                 val taxed = mutableMapOf(
                     "Taxable Amount" to taxableAmount,
+                    "Additional Taxes" to additonalTaxes,
                     "Digital Assets Tax" to digitalAssetsTax,
                     "Health and Education Cess" to cess,
                     "Tax Rebate" to rebate
@@ -116,6 +124,7 @@ class DeductionsFragment : Fragment() {
                             }" else ""
                         )
                     )
+                    addToBackStack(null)
                 }.commit()
             }
         }

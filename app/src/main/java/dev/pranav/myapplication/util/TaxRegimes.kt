@@ -8,6 +8,7 @@ interface TaxRegime {
     fun getTaxRebate(payable: Double, income: Double): Double
     fun getStandardDeductions(income: Double): Double
     fun calculateTax(income: Double, age: Age): Double
+    fun getAdditionalTaxes(income: Double, age: Age): Double
 }
 
 data object OldRegime : TaxRegime {
@@ -40,7 +41,7 @@ data object OldRegime : TaxRegime {
             val taxRate = getTaxRate(slab, age)
             if (income <= slab) {
                 incomeTax += (income - previousSlab) * taxRate / 100
-                break // Exit loop once income falls within a slab.
+                break // Exit loop once income falls out of a slab.
             }
             incomeTax += (slab - previousSlab) * taxRate / 100
         }
@@ -50,7 +51,35 @@ data object OldRegime : TaxRegime {
             incomeTax += (income - taxSlabs.last()) * 30 / 100
         }
 
+        // extended tax according to https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1#taxslabs
+        incomeTax += getAdditionalTaxes(income, age)
+
         return maxOf(incomeTax, 0.0)
+    }
+
+    override fun getAdditionalTaxes(income: Double, age: Age): Double {
+        var additional = 0.0
+
+        if (age == Age.SIXTY_OR_LESS) {
+            if (income > 5_00_000) {
+                additional += 12_500
+            }
+            if (income > 10_00_000) {
+                additional += 1_12_500
+            }
+        } else if (age == Age.SIXTY_TO_EIGHTY) {
+            if (income > 5_00_000) {
+                additional += 10_000
+            }
+            if (income > 10_00_000) {
+                additional += 1_10_500
+            }
+        } else {
+            if (income > 10_00_000) {
+                additional += 1_00_000
+            }
+        }
+        return additional
     }
 
     override fun getTaxRebate(payable: Double, income: Double): Double {
@@ -94,7 +123,7 @@ data object NewRegime : TaxRegime {
             val taxRate = getTaxRate(slab, age)
             if (income <= slab) {
                 incomeTax += (income - previousSlab) * taxRate / 100
-                break // Exit loop once income falls within a slab.
+                break // Exit loop once income falls out of slab.
             }
             incomeTax += (slab - previousSlab) * taxRate / 100
         }
@@ -104,7 +133,28 @@ data object NewRegime : TaxRegime {
             incomeTax += (income - taxSlabs.last()) * 30 / 100
         }
 
+        // extended tax according to https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1#taxslabs
+        incomeTax += getAdditionalTaxes(income, age)
+
         return maxOf(incomeTax, 0.0)
+    }
+
+    override fun getAdditionalTaxes(income: Double, age: Age): Double {
+        var additional = 0.0
+
+        if (income > 6_00_000) {
+            additional += 15_000
+        }
+        if (income > 9_00_000) {
+            additional += 45_000
+        }
+        if (income > 12_00_000) {
+            additional += 90_000
+        }
+        if (income > 15_00_000) {
+            additional += 1_50_000
+        }
+        return additional
     }
 
     override fun getTaxRebate(payable: Double, income: Double): Double = when {

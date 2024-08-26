@@ -3,7 +3,6 @@ package dev.pranav.myapplication
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +28,11 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
 
         binding.toolbar.setNavigationOnClickListener {
-            onBackPressedDispatcher.onBackPressed()
+            if (supportFragmentManager.backStackEntryCount > 0) {
+                supportFragmentManager.popBackStackImmediate()
+            } else {
+                finish()
+            }
         }
 
         supportFragmentManager.beginTransaction().add(R.id.fragment_container, HomeFragment())
@@ -76,9 +79,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, SettingsFragment()).addToBackStack(null)
-                    .commit()
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.fragment_container, SettingsFragment())
+                    addToBackStack(null)
+                    commit()
+                }
                 true
             }
 
