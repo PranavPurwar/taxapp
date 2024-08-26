@@ -51,6 +51,7 @@
     <string name="charity_donation_80g">Charity Donation (80G):</string>
     <string name="section_80g_of_the_indian_income_tax_act_allows_a_tax_deduction_for_contributions_to_certain_relief_funds_and_charitable_institutions">Section 80G of the Indian Income Tax Act allows a tax deduction for contributions to certain relief funds and charitable institutions.</string>
     <string name="enter_charity_donation_amount">Enter charity donation amount</string>
+    <string name="national_pension_scheme_nps_80ccd">National Pension Scheme (NPS) (80CCD):</string>
     <string name="employee_s_contribution_to_nps_80ccd">Employee\'s contribution to NPS (80CCD):</string>
     <string name="includes_voluntary_contribution_to_national_pension_scheme_nps_under_section_80ccd_1_and_80ccd_1b">Includes voluntary contribution to National Pension Scheme (NPS) under section 80CCD(1) and 80CCD(1B)</string>
     <string name="enter_contribution_amount">Enter contribution amount</string>
@@ -66,5 +67,9 @@
     <string name="enter_digital_assets_income">Enter digital assets income</string>
     <string name="common_continue">Continue</string>
     <string name="version_1_0_0">Version 1.0.0</string>
-
+    <string name="taxable_income">Taxable Income</string>
+    <string name="additional_taxes">Additional Taxes</string>
+    <string name="digital_assets_tax">Digital Assets Tax</string>
+    <string name="health_and_education_cess">Health and Education Cess</string>
+    <string name="can_save_you"> can save you up to %1$s in taxes.</string>
 </resources>

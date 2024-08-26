@@ -50,6 +50,7 @@
     <string name="charity_donation_80g">धर्मार्थ दान (80G):</string>
     <string name="section_80g_of_the_indian_income_tax_act_allows_a_tax_deduction_for_contributions_to_certain_relief_funds_and_charitable_institutions">भारतीय आयकर अधिनियम की धारा 80G कुछ राहत कोषों और धर्मार्थ संस्थानों में योगदान के लिए कर कटौती की अनुमति देती है।</string>
     <string name="enter_charity_donation_amount">धर्मार्थ दान राशि दर्ज करें</string>
+    <string name="national_pension_scheme_nps_80ccd">नेशनल पेंशन स्कीम (एनपीएस):</string>
     <string name="employee_s_contribution_to_nps_80ccd">NPS में कर्मचारी का योगदान (80CCD):</string>
     <string name="includes_voluntary_contribution_to_national_pension_scheme_nps_under_section_80ccd_1_and_80ccd_1b">धारा 80CCD(1) और 80CCD(1B) के तहत राष्ट्रीय पेंशन योजना (NPS) में स्वैच्छिक योगदान शामिल है</string>
     <string name="enter_contribution_amount">योगदान राशि दर्ज करें</string>
@@ -65,4 +66,9 @@
     <string name="enter_digital_assets_income">डिजिटल संपत्ति आय दर्ज करें</string>
     <string name="common_continue">जारी रखें</string>
     <string name="version_1_0_0">संस्करण 1.0.0</string>
+    <string name="taxable_income">करदायी आय</string>
+    <string name="additional_taxes">अतिरिक्त कर</string>
+    <string name="digital_assets_tax">डिजिटल संपत्तियों के लिए कर</string>
+    <string name="health_and_education_cess">स्वास्थ्य एवं शिक्षा उपकर</string>
+    <string name="can_save_you"> आपको करों पर %1$s बचा सकती है।</string>
 </resources>

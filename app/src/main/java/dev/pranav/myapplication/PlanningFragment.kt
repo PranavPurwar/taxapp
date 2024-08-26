@@ -45,7 +45,7 @@ class PlanningFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Tax Planning"
+        return getString(R.string.tax_planning)
     }
 }
 

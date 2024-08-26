@@ -93,34 +93,36 @@ class DeductionsFragment : Fragment() {
                 )
 
                 val deductions = mutableMapOf(
-                    "Investments and Expenses (80C)" to -deductions80C,
-                    "Medical Insurance (80D)" to -deductions80D,
-                    "Education Loan (80E)" to -deductions80E,
-                    "Charity Donation (80G)" to -deductions80G,
-                    "National Pension Scheme Contribution (NPS)" to -npsContribution,
-                    "Standard Deductions" to -standardDeduction
+                    getString(R.string.investments_and_expenses_80c) to -deductions80C,
+                    getString(R.string.medical_insurance_80d) to -deductions80D,
+                    getString(R.string.education_loan_80e) to -deductions80E,
+                    getString(R.string.charity_donation_80g) to -deductions80G,
+                    getString(R.string.national_pension_scheme_nps_80ccd) to -npsContribution,
+                    getString(R.string.standard_deduction) to -standardDeduction
                 )
 
                 val taxed = mutableMapOf(
-                    "Taxable Amount" to taxableAmount,
-                    "Additional Taxes" to additonalTaxes,
-                    "Digital Assets Tax" to digitalAssetsTax,
-                    "Health and Education Cess" to cess,
-                    "Tax Rebate" to rebate
+                    getString(R.string.taxable_income) to taxableAmount,
+                    getString(R.string.additional_taxes) to additonalTaxes,
+                    getString(R.string.digital_assets_tax) to digitalAssetsTax,
+                    getString(R.string.health_and_education_cess) to cess,
+                    getString(R.string.tax_rebate) to rebate
                 )
 
                 val newTax = NewRegime.calculateTax(taxableAmount, age)
-                val additonalTaxesNew = NewRegime.getAdditionalTaxes(taxableIncome, age)
-                val totalNewTax = newTax + additonalTaxesNew
+                val additionalTaxesNew = NewRegime.getAdditionalTaxes(taxableIncome, age)
+                val totalNewTax = newTax + additionalTaxesNew + digitalAssetsTax
 
                 parentFragmentManager.beginTransaction().apply {
                     replace(
                         R.id.fragment_container, TaxFragment(
                             incomeSources, deductions, taxed, tax,
                             if (totalNewTax < tax
-                            ) "New Regime can save you ${
+                            ) getString(R.string.new_regime) + " " + getString(
+                                R.string.can_save_you,
                                 (tax - totalNewTax).toINRString()
-                            }" else ""
+                            ) else ""
+
                         )
                     )
                     addToBackStack(null)

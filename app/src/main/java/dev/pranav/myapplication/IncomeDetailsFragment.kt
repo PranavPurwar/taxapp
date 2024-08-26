@@ -89,34 +89,35 @@ class IncomeDetailsFragment : Fragment() {
                 tax += cess + digitalAssetsTax + additonalTaxes - rebate
 
                 val incomeSources = mutableMapOf(
-                    "Annual Income" to income,
-                    "Digital Assets Income" to digitalAssetsIncome,
+                    getString(R.string.annual_income) to income,
+                    getString(R.string.digital_assets_income) to digitalAssetsIncome,
                 )
 
                 val deductions = mutableMapOf(
-                    "Standard Deductions" to standardDeduction,
+                    getString(R.string.standard_deduction) to standardDeduction,
                 )
 
                 val taxed = mutableMapOf(
-                    "Taxable Amount" to taxableAmount,
-                    "Digital Assets Tax" to digitalAssetsTax,
-                    "Health and Education Cess" to cess,
-                    "Additional Taxes" to additonalTaxes,
-                    "Tax Rebate" to rebate,
+                    getString(R.string.taxable_income) to taxableAmount,
+                    getString(R.string.digital_assets_tax) to digitalAssetsTax,
+                    getString(R.string.health_and_education_cess) to cess,
+                    getString(R.string.additional_taxes) to additonalTaxes,
+                    getString(R.string.tax_rebate) to rebate,
                 )
 
                 val oldTax = OldRegime.calculateTax(taxableAmount, age)
                 val additonalTaxesOld = OldRegime.getAdditionalTaxes(taxableIncome, age)
-                val totalOldTax = oldTax + additonalTaxesOld
+                val totalOldTax = oldTax + additonalTaxesOld + digitalAssetsTax
 
                 parentFragmentManager.beginTransaction().apply {
                     replace(
                         R.id.fragment_container, TaxFragment(
                             incomeSources, deductions, taxed, tax,
-                            if (totalOldTax < tax
-                            ) "Old Regime can save you ${
-                                (tax - totalOldTax).toINRString()
-                            }" else ""
+                            if (totalOldTax < tax)
+                                getString(R.string.old_regime) + " " + getString(
+                                    R.string.can_save_you,
+                                    (tax - totalOldTax).toINRString()
+                                ) else ""
                         )
                     )
                 }.commit()
