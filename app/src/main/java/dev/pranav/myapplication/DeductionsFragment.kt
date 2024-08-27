@@ -158,6 +158,6 @@ class DeductionsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Deductions"
+        return getString(R.string.deductions)
     }
 }

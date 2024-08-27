@@ -148,6 +148,6 @@ class IncomeDetailsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Income Details"
+        return getString(R.string.income_details)
     }
 }

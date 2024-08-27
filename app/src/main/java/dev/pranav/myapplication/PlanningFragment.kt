@@ -81,30 +81,30 @@ internal class ArticleAdapter(val data: List<Article>) :
 
 val data = listOf(
     Article(
+        "Income Tax Saving Ways for Beginners",
+        "Tax planning is one of the ways that will help you save on taxes and increase your income. The Income Tax Act provides deductions for various investments, savings and expenditures incurred by the taxpayer in a particular financial year.",
+        "https://cleartax.in/s/income-tax-savings"
+    ),
+    Article(
         "What is Tax Planning?",
         "Tax Planning is a way of minimising your tax liabilities by arranging your finances in such a way that can take advantage of available tax deductions, benefits, and exemptions given by the government to reduce your net taxable income effectively.",
         "https://www.fincart.com/blog/what-is-tax-planning"
     ),
     Article(
-        "Income Tax Saving ways for beginners",
-        "Tax planning is one of the ways that will help you save on taxes and increase your income. The Income Tax Act provides deductions for various investments, savings and expenditures incurred by the taxpayer in a particular financial year.",
-        "https://cleartax.in/s/income-tax-savings"
+        "Returns and Forms Applicable for Salaried Individuals for AY 2024-25",
+        "Official list of Returns and Forms available for Salaried Individuals for AY 2024-25",
+        "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1"
+    ),
+    Article(
+        "How to File Income Tax Returns?",
+        "Official income tax site providing details on filing Income Tax Returns.",
+        "https://incometaxindia.gov.in/Pages/tax-services/file-income-tax-return.aspx"
     ),
     Article(
         "E-Filing FAQ",
         "Official income tax site with commonly asked questions and answers. Provides additional details related to income tax.",
         "https://www.incometax.gov.in/iec/foportal/help/e-filing-itr1-form-sahaj-faq"
     ),
-    Article(
-        "How to file Income Tax Returns?",
-        "Official income tax site providing details on filing Income Tax Returns.",
-        "https://incometaxindia.gov.in/Pages/tax-services/file-income-tax-return.aspx"
-    ),
-    Article(
-        "Returns and Forms Applicable for Salaried Individuals for AY 2024-25",
-        "Official list of Returns and Forms available for Salaried Individuals for AY 2024-25",
-        "https://www.incometax.gov.in/iec/foportal/help/individual/return-applicable-1"
-    )
 )
 
 data class Article(val title: String, val description: String, val url: String)

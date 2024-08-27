@@ -31,6 +31,16 @@ class BasicDetailsFragment : Fragment() {
         enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
         reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Y, /* forward= */ false)
 
+        binding.buttonGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (checkedId == R.id.new_regime && isChecked) {
+                binding.ageLayout.visibility = View.GONE
+                binding.space.visibility = View.GONE
+            } else {
+                binding.ageLayout.visibility = View.VISIBLE
+                binding.space.visibility = View.VISIBLE
+            }
+        }
+
         binding.continueButton.setOnClickListener {
             val age = when (binding.ageGroup.checkedButtonId) {
                 R.id.eighteen_to_sixty -> Age.SIXTY_OR_LESS
@@ -62,6 +72,6 @@ class BasicDetailsFragment : Fragment() {
     }
 
     override fun toString(): String {
-        return "Basic Details"
+        return getString(R.string.basic_details)
     }
 }

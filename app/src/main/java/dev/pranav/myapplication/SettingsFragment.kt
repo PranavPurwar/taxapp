@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import androidx.fragment.app.Fragment
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.FragmentSettingsBinding
@@ -49,7 +50,17 @@ class SettingsFragment : Fragment() {
                     }
                     prefs.edit().putString("language", locale.language).apply()
                     requireActivity().setLocale(locale)
+                    requireActivity().findViewById<MaterialToolbar>(R.id.toolbar)
+                        .setTitle(R.string.action_settings)
                     dialog.dismiss()
+                    parentFragmentManager
+                        .beginTransaction()
+                        .detach(this)
+                        .commit()
+
+                    parentFragmentManager.beginTransaction()
+                        .attach(this)
+                        .commit()
                 }.show()
         }
         binding.faq.setOnClickListener {

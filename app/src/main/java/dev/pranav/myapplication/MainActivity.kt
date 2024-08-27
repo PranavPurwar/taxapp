@@ -60,6 +60,16 @@ class MainActivity : AppCompatActivity() {
                 fragment.toString()
         }
 
+        supportFragmentManager.addFragmentOnAttachListener { fragmentManager, fragment ->
+            if (fragment is HomeFragment) {
+                binding.toolbar.navigationIcon = null
+            } else {
+                binding.toolbar.navigationIcon =
+                    ContextCompat.getDrawable(this, R.drawable.round_arrow_back_ios_new_24)
+            }
+            supportActionBar?.title = fragment.toString()
+        }
+
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (supportFragmentManager.backStackEntryCount > 0) {

@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name">टैक्स मेट</string>
     <string name="action_settings">सेटिंग्स</string>
 
     <string name="next">अगला</string>
@@ -71,4 +72,7 @@
     <string name="digital_assets_tax">डिजिटल संपत्तियों के लिए कर</string>
     <string name="health_and_education_cess">स्वास्थ्य एवं शिक्षा उपकर</string>
     <string name="can_save_you"> आपको करों पर %1$s बचा सकती है।</string>
+    <string name="basic_details">मूलभूत विवरण</string>
+    <string name="income_details">आय विवरण</string>
+
 </resources>
