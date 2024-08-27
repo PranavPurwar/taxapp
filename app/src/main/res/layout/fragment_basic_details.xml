@@ -209,12 +209,12 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:minHeight="12dp"
-        android:layout_weight="2" />
+        android:layout_weight="1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/continue_button"
         style="@style/Widget.Material3.Button.TonalButton"
+        android:marginTop="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
