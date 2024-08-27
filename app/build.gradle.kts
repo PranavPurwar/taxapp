@@ -19,10 +19,10 @@ android {
 
         signingConfigs {
             register("release") {
-                keyAlias = "release"
-                keyPassword = "release"
+                keyAlias = "taxapp"
+                keyPassword = "taxapp"
                 storeFile = file("release.jks")
-                storePassword = "release"
+                storePassword = "taxapp"
             }
         }
     }
