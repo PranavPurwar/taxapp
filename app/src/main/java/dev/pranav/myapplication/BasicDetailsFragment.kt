@@ -1,6 +1,8 @@
 package dev.pranav.myapplication
 
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,10 +36,12 @@ class BasicDetailsFragment : Fragment() {
         binding.buttonGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (checkedId == R.id.new_regime && isChecked) {
                 binding.ageLayout.visibility = View.GONE
+                TransitionManager.beginDelayedTransition(binding.root, AutoTransition())
                 binding.space.visibility = View.GONE
             } else {
-                binding.ageLayout.visibility = View.VISIBLE
                 binding.space.visibility = View.VISIBLE
+                TransitionManager.beginDelayedTransition(binding.root, AutoTransition())
+                binding.ageLayout.visibility = View.VISIBLE
             }
         }
 

@@ -2,10 +2,10 @@
     <string name="app_name">टैक्स मेट</string>
     <string name="action_settings">सेटिंग्स</string>
 
-    <string name="next">अगला</string>
-    <string name="previous">पिछला</string>
+    <string name="next">आगे</string>
+    <string name="previous">पीछे</string>
     <string name="select_tax_regime">कर व्यवस्था चुनें:</string>
-    <string name="new_tax_regime_info">बजट 2020 में नई कर व्यवस्था की शुरुआत की गई थी जिसमें कर स्लैब बदले गए और करदाताओं को रियायती कर दरें दी गईं। हालांकि, जो नई व्यवस्था का विकल्प चुनते हैं, वे कई छूट और कटौतियों का दावा नहीं कर सकते, जैसे HRA, LTA, 80C, 80D और अन्य।</string>
+    <string name="new_tax_regime_info">बजट 2020 में नई कर व्यवस्था की शुरुआत की गई थी, जिसमें कर स्लैब बदले गए और करदाताओं को रियायती कर दरें दी गईं। हालाँकि, जो नई व्यवस्था का विकल्प चुनते हैं, वे कई छूट और कटौतियों का दावा नहीं कर सकते, जैसे HRA, LTA, 80C, 80D और अन्य।</string>
     <string name="old_regime">पुरानी व्यवस्था</string>
     <string name="new_regime">नई व्यवस्था</string>
     <string name="choose_your_age_group">अपना आयु वर्ग चुनें:</string>
@@ -14,13 +14,13 @@
     <string name="_60_80_years">60 – 80 वर्ष</string>
     <string name="_80_or_above">80 या अधिक</string>
     <string name="employment_type">अपना रोजगार प्रकार चुनें:</string>
-    <string name="salaried_pensioners_benefits">वेतनभोगी व्यक्तियों और पेंशनभोगियों को कर भुगतान में कुछ मानक कटौतियां मिलती हैं।</string>
+    <string name="salaried_pensioners_benefits">वेतनभोगी व्यक्तियों और पेंशनभोगियों को कर भुगतान में कुछ मानक कटौतियाँ मिलती हैं।</string>
     <string name="salaried">वेतनभोगी</string>
     <string name="pensioners">पेंशनभोगी</string>
     <string name="other">अन्य</string>
     <string name="continue_text">जारी रखें</string>
     <string name="tax_calculator">कर कैलकुलेटर</string>
-    <string name="home_message">हमारी दो शक्तिशाली सुविधाओं के साथ अपने करों को सरल बनाएं:\n\nकर कैलकुलेटर: वर्तमान वित्तीय वर्ष के लिए अपनी आयकर देयता की त्वरित और सटीक गणना करें। अपनी आय, कटौतियों और निवेश के आधार पर तुरंत परिणाम प्राप्त करें।\n\nकर योजनाकार: आने वाले वर्ष के लिए रणनीतिक रूप से अपने करों की योजना बनाएं। अपने कर बोझ को कम करने और अपनी बचत को अधिकतम करने के लिए विभिन्न निवेश विकल्पों और कर-बचत रणनीतियों का पता लगाएं।\n\nभारतीय कर प्रणाली प्रगतिशील है, जिसका अर्थ है कि उच्च आय अर्जित करने वाले कर का उच्च प्रतिशत चुकाते हैं। आपकी कर देयता को कम करने में मदद के लिए विभिन्न कटौतियां और छूट उपलब्ध हैं। हमारा ऐप आपको इन जटिलताओं में मार्गदर्शन करने और अपने करों के बारे में सूचित निर्णय लेने में मदद करता है।\n\nअपना रास्ता चुनें और आज ही अपने करों पर नियंत्रण पाएं!</string>
+    <string name="home_message">हमारी दो शक्तिशाली सुविधाओं के साथ अपने करों को सरल बनाएं:\n\nकर कैलकुलेटर: वर्तमान वित्तीय वर्ष के लिए अपनी आयकर देयता की त्वरित और सटीक गणना करें। अपनी आय, कटौतियों और निवेश के आधार पर तुरंत परिणाम प्राप्त करें।\n\nकर योजनाकार: आने वाले वर्ष के लिए रणनीतिक रूप से अपने करों की योजना बनाएँ। अपने कर बोझ को कम करने और अपनी बचत को अधिकतम करने के लिए विभिन्न निवेश विकल्पों और कर-बचत रणनीतियों का पता लगाएँ।\n\nभारतीय कर प्रणाली प्रगतिशील है, जिसका अर्थ है कि उच्च आय अर्जित करने वाले कर का उच्च प्रतिशत चुकाते हैं। आपकी कर देयता को कम करने में मदद के लिए विभिन्न कटौतियाँ और छूट उपलब्ध हैं। हमारा ऐप आपको इन जटिलताओं में मार्गदर्शन करने और अपने करों के बारे में सूचित निर्णय लेने में मदद करता है।\n\nअपना रास्ता चुनें और आज ही अपने करों पर नियंत्रण पाएँ!</string>
     <string name="tax_calculation">कर गणना</string>
     <string name="tax_planning">कर योजना</string>
     <string name="languages">भाषाएँ</string>
@@ -37,7 +37,7 @@
     <string name="total_tax">कुल कर</string>
     <string name="final_amount">अंतिम राशि</string>
     <string name="tax">कर</string>
-    <string name="deductions">कटौतियां</string>
+    <string name="deductions">कटौतियाँ</string>
     <string name="income_sources">आय के स्रोत</string>
     <string name="investments_and_expenses_80c">निवेश और खर्च (80C):</string>
     <string name="investments_made_in_equity_linked_saving_schemes_ppf_spf_rpf_payments_made_towards_life_insurance_premiums_principal_sum_of_a_home_loan_ssy_nsc_scss_etc">इक्विटी लिंक्ड सेविंग स्कीम, PPF/SPF/RPF में किए गए निवेश, जीवन बीमा प्रीमियम के लिए किए गए भुगतान, गृह ऋण की मूल राशि, SSY, NSC, SCSS, आदि।</string>
@@ -51,7 +51,7 @@
     <string name="charity_donation_80g">धर्मार्थ दान (80G):</string>
     <string name="section_80g_of_the_indian_income_tax_act_allows_a_tax_deduction_for_contributions_to_certain_relief_funds_and_charitable_institutions">भारतीय आयकर अधिनियम की धारा 80G कुछ राहत कोषों और धर्मार्थ संस्थानों में योगदान के लिए कर कटौती की अनुमति देती है।</string>
     <string name="enter_charity_donation_amount">धर्मार्थ दान राशि दर्ज करें</string>
-    <string name="national_pension_scheme_nps_80ccd">नेशनल पेंशन स्कीम (एनपीएस):</string>
+    <string name="national_pension_scheme_nps_80ccd">नेशनल पेंशन स्कीम (NPS):</string>
     <string name="employee_s_contribution_to_nps_80ccd">NPS में कर्मचारी का योगदान (80CCD):</string>
     <string name="includes_voluntary_contribution_to_national_pension_scheme_nps_under_section_80ccd_1_and_80ccd_1b">धारा 80CCD(1) और 80CCD(1B) के तहत राष्ट्रीय पेंशन योजना (NPS) में स्वैच्छिक योगदान शामिल है</string>
     <string name="enter_contribution_amount">योगदान राशि दर्ज करें</string>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "918129385721",
+    "project_id": "taxapp-4b126",
+    "storage_bucket": "taxapp-4b126.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918129385721:android:768ce469a1d1263594c228",
+        "android_client_info": {
+          "package_name": "dev.pranav.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQdcf55VH1Jzh2ceE6vlu90e6nI3zG2BU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

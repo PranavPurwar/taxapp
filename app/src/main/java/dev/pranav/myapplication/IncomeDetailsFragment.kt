@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.transition.MaterialSharedAxis
 import dev.pranav.myapplication.databinding.FragmentIncomeDetailsBinding
 import dev.pranav.myapplication.util.Age
@@ -78,9 +77,6 @@ class IncomeDetailsFragment : Fragment() {
 
                 val initialTax = regime.calculateTax(taxableAmount, age)
                 var tax = initialTax
-                Snackbar.make(
-                    binding.root, "Calculate Tax: $tax", Snackbar.LENGTH_LONG
-                ).show()
                 val cess = calculateHealthAndEducationalCess(tax)
                 val rebate = regime.getTaxRebate(tax, taxableIncome)
                 val digitalAssetsTax = digitalAssetsIncome * 0.03
